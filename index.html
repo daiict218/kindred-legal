@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kindred — Privacy Notice</title>
+  <style>
+    /* ---- reset ---- */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* ---- base ---- */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                   "Helvetica Neue", Arial, sans-serif;
+      font-size: 1rem;
+      line-height: 1.7;
+      color: #1a1a1a;
+      background: #fff;
+      padding: 1.5rem 1rem 4rem;
+    }
+
+    /* ---- container ---- */
+    .content {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    /* ---- headings ---- */
+    h1 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      line-height: 1.3;
+    }
+    h2 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-top: 2.2rem;
+      margin-bottom: 0.5rem;
+      line-height: 1.35;
+    }
+    h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-top: 1.5rem;
+      margin-bottom: 0.4rem;
+    }
+    h4 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-top: 1.2rem;
+      margin-bottom: 0.3rem;
+    }
+
+    /* ---- body text ---- */
+    p { margin-top: 0.75rem; }
+    ul, ol { margin-top: 0.6rem; padding-left: 1.6rem; }
+    li { margin-top: 0.3rem; }
+    li > ul, li > ol { margin-top: 0.2rem; }
+
+    /* ---- strong / em ---- */
+    strong { font-weight: 600; }
+
+    /* ---- code / inline code ---- */
+    code {
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+      font-size: 0.88em;
+      background: #f3f4f6;
+      border-radius: 3px;
+      padding: 0.1em 0.35em;
+      word-break: break-all;
+    }
+
+    /* ---- links ---- */
+    a { color: #0066cc; text-decoration: underline; }
+    a:hover { color: #004499; }
+
+    /* ---- horizontal rule ---- */
+    hr {
+      border: none;
+      border-top: 1px solid #e5e7eb;
+      margin: 2rem 0;
+    }
+
+    /* ---- blockquote — used for grievance callout ---- */
+    blockquote {
+      border-left: 4px solid #d1d5db;
+      background: #f9fafb;
+      margin: 1rem 0;
+      padding: 0.75rem 1.1rem;
+      border-radius: 0 4px 4px 0;
+    }
+    blockquote p { margin-top: 0.3rem; }
+    blockquote p:first-child { margin-top: 0; }
+
+    /* ---- tables ---- */
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 1rem 0;
+      font-size: 0.92rem;
+    }
+    th, td {
+      border: 1px solid #d1d5db;
+      padding: 0.5rem 0.75rem;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: #f3f4f6;
+      font-weight: 600;
+    }
+    tr:nth-child(even) td { background: #f9fafb; }
+
+    /* ---- status / draft badge ---- */
+    /* The first <p> after <h1> contains the bold status line */
+    .content > p:first-of-type {
+      font-size: 0.85rem;
+      color: #6b7280;
+      margin-top: 0.25rem;
+    }
+
+    /* ---- mobile tweaks ---- */
+    @media (max-width: 480px) {
+      body { font-size: 0.97rem; padding: 1rem 0.85rem 3rem; }
+      h1 { font-size: 1.35rem; }
+      h2 { font-size: 1.05rem; }
+      table { font-size: 0.82rem; }
+      th, td { padding: 0.4rem 0.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+<h1 id="kindred-privacy-notice" tabindex="-1">Kindred — Privacy Notice</h1>
+<p><strong>Status:</strong> DRAFT v0.3 · <em>Source-of-truth for the in-app notice and the public-hosted policy. Becomes effective when Kindred opens to Internal Testing on Google Play.</em>
+<strong>Last updated:</strong> 2026-05-11
+<strong>Effective:</strong> When the first AAB lands on Google Play Internal Testing track. Until then, this is a draft.</p>
+<hr>
+<h2 id="in-short-the-30-second-version" tabindex="-1">In short — the 30-second version</h2>
+<ul>
+<li><strong>Kindred is a personal health-records vault for caregivers.</strong> You upload records (lab reports, prescriptions, doctor notes, etc.) for the people you care for, and log day-to-day vital readings (BP, blood sugar) for them.</li>
+<li><strong>Your data lives in India</strong> (Mumbai). The backend runs on Oracle Cloud; uploaded record files are stored in Amazon S3. Both are in Mumbai data centres.</li>
+<li><strong>We don’t sell your data, ever.</strong> We don’t share it with advertisers, marketers, or insurers.</li>
+<li><strong>You can delete your account and your records at any time.</strong> When you do, the underlying files are erased — not soft-deleted.</li>
+<li><strong>One person to write to:</strong> <code>ajaygaur319@gmail.com</code>. We respond to grievance and rights requests within 30 days.</li>
+</ul>
+<p>The full notice is below. Read it once. The short version above is what most caregivers need to know.</p>
+<hr>
+<h2 id="who-we-are" tabindex="-1">1. Who we are</h2>
+<p>Kindred is operated by <strong>Ajay Gaur</strong>, an individual based in India, acting as the <strong>Data Fiduciary</strong> under the Digital Personal Data Protection Act, 2023 (“DPDPA”).</p>
+<p>If Kindred incorporates as a legal entity in future, this notice will be updated and you will be asked to consent again.</p>
+<p>For everything in this notice, “we” / “Kindred” means the data fiduciary above. “You” means the person whose personal data is being processed — what DPDPA calls the <strong>Data Principal</strong>.</p>
+<h2 id="data-collected" tabindex="-1">2. What we collect</h2>
+<p>We only collect data we actually need to run the app. Today, that means:</p>
+<p><strong>Account data</strong></p>
+<ul>
+<li>Your name, email address, and Google profile picture (when you sign in with Google).</li>
+<li>Your Google account identifier (a unique ID Google issues to us).</li>
+</ul>
+<p><strong>Health-record data you upload</strong></p>
+<ul>
+<li>Files you upload as records — typically lab reports, prescriptions, doctor notes, discharge summaries, imaging reports, and similar documents. These often contain sensitive health information about the patient the record is for.</li>
+<li>A name and date of birth for each patient you add (e.g., yourself, your parent).</li>
+<li>The relationship you have to that patient (e.g., self, father, mother).</li>
+</ul>
+<p><strong>Vital readings you log</strong></p>
+<ul>
+<li>Blood-pressure measurements (systolic, diastolic, pulse) and blood-glucose readings (value, fasting / post-meal context) that you log for a patient.</li>
+<li>Whether a prescribed medication was taken at the time of a reading (yes / no), if the daily check is configured to track medication.</li>
+<li>Optional notes you add to a reading.</li>
+<li>A threshold you set for each patient (e.g., 140/90 for BP) and a flag we compute for each reading indicating whether it crossed the threshold.</li>
+<li>Who logged the reading and when. Vital readings are intrinsic to the patient; we record which caregiver entered them as metadata, for accountability among co-caregivers.</li>
+</ul>
+<p><strong>Caregiver-relationship data</strong></p>
+<ul>
+<li>The email address of someone you invite to share access to a patient’s records.</li>
+<li>The fact that you have invited them, and whether they accepted.</li>
+<li>A record of consent attestations (when, by which caregiver, on whose behalf) for invites and revocations, retained as a privacy / DPDPA audit trail.</li>
+</ul>
+<p><strong>Operational logs</strong></p>
+<ul>
+<li>Server logs that record requests to our backend (timestamp, request path, response code, IP address). These exist for security, debugging, and abuse prevention.</li>
+<li>Sign-in events (timestamp, device type, IP address).</li>
+</ul>
+<p><strong>What we do not collect today</strong></p>
+<ul>
+<li>Location, contacts, photos beyond what you upload, microphone audio, or any data from other apps.</li>
+<li>We do not run third-party advertising or analytics SDKs in the app.</li>
+</ul>
+<h2 id="purposes" tabindex="-1">3. Why we collect it</h2>
+<table>
+<thead>
+<tr>
+<th>What we collect</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Account data</td>
+<td>To let you sign in, recognise you across devices, and contact you if needed.</td>
+</tr>
+<tr>
+<td>Health-record data</td>
+<td>To store records on your behalf and show them back to you and the caregivers you authorise.</td>
+</tr>
+<tr>
+<td>Vital readings</td>
+<td>To track day-to-day measurements, show trends to caregivers, and alert co-caregivers when a reading crosses a threshold the family has set.</td>
+</tr>
+<tr>
+<td>Caregiver-relationship data</td>
+<td>To deliver invites, grant access to the records and vitals you’ve chosen to share, and keep an honest audit trail of who agreed to what and when.</td>
+</tr>
+<tr>
+<td>Operational logs</td>
+<td>To keep the service secure, diagnose problems, and detect abuse.</td>
+</tr>
+</tbody>
+</table>
+<p>We do not use any of this data for advertising, marketing profiling, or sale to third parties.</p>
+<h2 id="legal-basis" tabindex="-1">4. Legal basis for processing</h2>
+<p>We process your personal data on the basis of your <strong>consent</strong>, given when you sign up and when you upload data on behalf of a patient (DPDPA Section 6). Operational logs are processed on the basis of legitimate uses (security and service operation) under DPDPA Section 7.</p>
+<p>You can withdraw consent at any time — see <a href="#your-rights">Your rights</a>. Withdrawal applies going forward and does not affect processing that has already happened.</p>
+<h2 id="storage-location" tabindex="-1">5. Where your data is stored</h2>
+<ul>
+<li><strong>Region:</strong> All your data is processed and stored in India. Your data does not leave India in normal operation.</li>
+<li><strong>Backend service and database:</strong> Hosted on Oracle Cloud Infrastructure, Mumbai region (<code>ap-mumbai-1</code>). The database is a SQLite file on an encrypted block volume — Oracle encrypts all block volumes by default, and we plan to add a second layer of application-level encryption (SQLCipher, AES-256) before opening to caregivers outside the founding family.</li>
+<li><strong>Uploaded record files:</strong> Stored in a private Amazon S3 bucket in Mumbai (<code>ap-south-1</code>). The bucket is not public; only the Kindred backend can authorise access.</li>
+<li><strong>Encryption at rest — files:</strong> S3 objects are encrypted using AWS-managed keys (SSE-S3) today. We plan to upgrade to customer-managed keys (SSE-KMS) before opening to a wider audience.</li>
+<li><strong>Encryption at rest — database:</strong> Oracle volume-encryption today; SQLCipher application-level encryption added before non-founding caregivers are invited.</li>
+<li><strong>Encryption in transit:</strong> All app-to-server and server-to-storage traffic uses TLS.</li>
+<li><strong>Backups:</strong> Encrypted backups of the database are kept on a separate location for up to 30 days; we deliberately keep the backup secret separately from the database secret so a single backup capture cannot be decrypted on its own.</li>
+</ul>
+<h2 id="retention" tabindex="-1">6. How long we keep your data</h2>
+<table>
+<thead>
+<tr>
+<th>Type of data</th>
+<th>Retention</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Account data (name, email, profile picture, Google ID)</td>
+<td>Until you delete your account. After deletion, fully removed within 30 days.</td>
+</tr>
+<tr>
+<td>Patient records you uploaded</td>
+<td>Until you delete the record, or delete your account. After deletion, fully removed within 30 days, including all stored versions of the file.</td>
+</tr>
+<tr>
+<td>Vital readings you logged</td>
+<td>Until the patient or you delete the reading, or you delete your account. After deletion, fully removed within 30 days.</td>
+</tr>
+<tr>
+<td>Caregiver invites and acceptance records</td>
+<td>Until you remove the caregiver, or delete your account. Consent attestations linked to these events are retained for 3 years after the share ends, as a privacy / DPDPA audit trail.</td>
+</tr>
+<tr>
+<td>Server logs (incl. IP address)</td>
+<td>90 days, then deleted. Retained for security and debugging.</td>
+</tr>
+<tr>
+<td>Sign-in audit logs</td>
+<td>90 days, then deleted.</td>
+</tr>
+<tr>
+<td>Operational backups</td>
+<td>Up to 30 days on a rolling window. Deletion requests propagate to backups within 35 days of the request.</td>
+</tr>
+</tbody>
+</table>
+<p>If a deletion request reaches us via email, we treat it as a formal <strong>right-to-erasure</strong> request under DPDPA and the timelines above apply.</p>
+<h2 id="sharing" tabindex="-1">7. Who we share it with</h2>
+<p>We share your data with a small number of service providers (called <strong>Data Processors</strong> under DPDPA), strictly to operate the service:</p>
+<ul>
+<li><strong>Google LLC</strong> — for Google Sign-In, when you choose to sign in with Google. Google’s own privacy notice applies to that step.</li>
+<li><strong>Oracle Cloud Infrastructure (India)</strong> — for hosting the backend service and the database, in their Mumbai region.</li>
+<li><strong>Amazon Web Services India</strong> — for hosting uploaded record files in their Mumbai region.</li>
+</ul>
+<p>We also share data with <strong>other caregivers you choose to invite</strong>:</p>
+<ul>
+<li>When you invite another person (typically a family member) to view a patient’s records, that person becomes a co-caregiver of that patient and can view all of the records you’ve uploaded for that patient. They can also upload new records and log vital readings for the same patient. You retain access; the invite adds them, it does not transfer ownership.</li>
+<li>A share is identified by the recipient’s email address. The recipient must sign in to Kindred with that exact email (via Google Sign-In) before access takes effect. If the share is not claimed within 30 days, it expires automatically.</li>
+<li><strong>You can remove an invited caregiver at any time</strong>, including a caregiver who originally invited others. If you are the patient yourself (i.e., you have signed up and claimed your own record), you can revoke any caregiver — including the person who originally added you — without their cooperation. This is a deliberate property: control over who can see your records belongs to you.</li>
+<li>Removing a caregiver ends their access to that patient’s records and vitals going forward. Records and readings they entered while they had access remain in the patient’s record set.</li>
+<li>Sharing is per-patient. Inviting someone to see records for one parent does not give them access to records for any other patient.</li>
+</ul>
+<p>We do <strong>not</strong> share your data with:</p>
+<ul>
+<li>Advertisers, ad networks, or marketing analytics services.</li>
+<li>Insurers, employers, hospitals, doctors, or any other third party — unless you explicitly direct us to (e.g., in future, by sharing a record with someone).</li>
+<li>Government or law enforcement, unless required by a lawful order. If we receive such an order and are not legally barred from doing so, we will tell the affected user.</li>
+</ul>
+<p>We do <strong>not</strong> sell your data. There is no business model that involves selling data, and we have no intention of building one.</p>
+<h2 id="your-rights" tabindex="-1">8. Your rights</h2>
+<p>Under DPDPA, you have the following rights as a Data Principal. They apply to you whenever Kindred is processing your personal data.</p>
+<ul>
+<li><strong>Right to access</strong> — see what personal data we hold about you and a summary of how it’s being processed.</li>
+<li><strong>Right to correction</strong> — fix data that is wrong, incomplete, or out of date.</li>
+<li><strong>Right to erasure</strong> — ask us to delete your data. We comply within the timelines in <a href="#retention">Retention</a>, unless we are legally required to keep it.</li>
+<li><strong>Right to grievance redressal</strong> — raise a complaint about how we handle your data, and have it addressed within 30 days.</li>
+<li><strong>Right to nominate</strong> — name another person who can exercise your rights on your behalf if you die or become incapacitated. (We will support this through the in-app caregiver flow.)</li>
+<li><strong>Right to withdraw consent</strong> — at any time, for any processing based on consent. Withdrawal applies going forward.</li>
+</ul>
+<p>For data <strong>about a patient you care for</strong> (e.g., your aging parent), the patient is the Data Principal. If the patient is able to use Kindred themselves, they can sign up and claim their record — at which point they can exercise these rights directly. Until then, you exercise these rights as their lawful caregiver.</p>
+<h2 id="exercise-rights" tabindex="-1">9. How to use these rights</h2>
+<p>Three ways:</p>
+<ul>
+<li><strong>In the app</strong> — for the most common actions (delete a record, delete your account, remove a caregiver), use the in-app option. It is faster and produces the same result as a written request.</li>
+<li><strong>On the web</strong> — to delete your account without installing the app (for example, from a borrowed phone, or after uninstalling), visit <strong><code>https://kindred.app/delete-account</code></strong> and complete the flow. This is the same end result as the in-app deletion.</li>
+<li><strong>By email</strong> — write to <strong><code>ajaygaur319@gmail.com</code></strong> with a short description of the request. Please mention the email address of your Kindred account so we can verify your identity.</li>
+</ul>
+<p>We respond to all requests within 30 days. Most are completed within 7 days.</p>
+<p>We will not charge a fee for these requests, unless they are manifestly unfounded or excessive (e.g., the same request repeated many times in a short period) — in which case DPDPA permits a reasonable fee or a refusal.</p>
+<h2 id="childrens-data" tabindex="-1">10. Data about children</h2>
+<p>DPDPA defines a child as anyone under 18 (Section 9).</p>
+<ul>
+<li>If the patient you are adding is a minor, you must be the <strong>parent or legal guardian</strong> of that child, or have explicit authorisation from the parent or legal guardian.</li>
+<li>We do not process children’s personal data for tracking, behavioural monitoring, or targeted advertising — DPDPA Section 9 prohibits these and we have no use for them anyway.</li>
+<li>When the child reaches 18, they can sign up and claim their record. From that point on, the rights in <a href="#your-rights">Your rights</a> belong to them, and they decide who continues to have caregiver access.</li>
+</ul>
+<h2 id="grievance" tabindex="-1">11. Grievance redressal</h2>
+<p>If you have a complaint about how we are handling your personal data, write to:</p>
+<blockquote>
+<p><strong>Email:</strong> <code>ajaygaur319@gmail.com</code>
+<strong>For the attention of:</strong> Grievance Officer, Kindred
+<strong>Response time:</strong> Acknowledgement within 7 working days; resolution within 30 days.</p>
+</blockquote>
+<p>If you are not satisfied with our response, you can complain to the <strong>Data Protection Board of India</strong> under DPDPA Section 13. The Board’s contact details and complaint process will be published on the Government of India’s official channels once the Board is fully constituted.</p>
+<h2 id="changes" tabindex="-1">12. Future changes — including AI features</h2>
+<p>The current Kindred app stores and shows your records. It does <strong>not</strong> use artificial intelligence to read, summarise, or analyse them.</p>
+<p>When AI features launch — for example, generating a pre-visit brief from your records — the processing involved is materially different from what’s in this notice. Before any such feature processes your data, we will:</p>
+<ol>
+<li>Update this notice to describe exactly what the AI feature does, what data it processes, where it runs, and what it returns.</li>
+<li>Ask you to consent again, specifically for that processing. You can refuse, and the AI features will simply remain off for your account.</li>
+</ol>
+<p>For other changes (e.g., adding a new feature, switching a service provider), we will update this notice and post the change date at the top. Material changes will be communicated by email and through an in-app prompt.</p>
+<h2 id="contact" tabindex="-1">13. How to reach us</h2>
+<p>For anything in this notice — questions, rights requests, grievances, corrections — write to:</p>
+<p><strong><code>ajaygaur319@gmail.com</code></strong></p>
+<p>For everything else (product feedback, bug reports, general questions), use the in-app feedback option once it ships, or the same email above.</p>
+<hr>
+<h2 id="appendix-for-the-developer-wiring-this-in-phase-05" tabindex="-1">Appendix — for the developer wiring this in Phase 0.5</h2>
+<p><em>This appendix is <strong>not</strong> part of the user-facing notice. Strip it from the in-app screen.</em></p>
+<h3 id="stable-section-anchors" tabindex="-1">Stable section anchors</h3>
+<p>These anchors are part of the contract. Don’t rename them — Phase 0.5 in-app deep links and any future settings cards will link to them.</p>
+<ul>
+<li><code>#who-we-are</code></li>
+<li><code>#data-collected</code></li>
+<li><code>#purposes</code></li>
+<li><code>#legal-basis</code></li>
+<li><code>#storage-location</code></li>
+<li><code>#retention</code></li>
+<li><code>#sharing</code></li>
+<li><code>#your-rights</code></li>
+<li><code>#exercise-rights</code></li>
+<li><code>#childrens-data</code></li>
+<li><code>#grievance</code></li>
+<li><code>#changes</code></li>
+<li><code>#contact</code></li>
+</ul>
+<h3 id="things-that-must-be-true-before-this-notice-is-shown-to-any-external-user" tabindex="-1">Things that must be true before this notice is shown to any external user</h3>
+<p>The notice makes promises Kindred has to actually keep. Block Internal Testing publication (and all later tracks) until each of these is true:</p>
+<ol>
+<li><strong><code>ajaygaur319@gmail.com</code> is a monitored inbox.</strong> A 7-day acknowledgement and 30-day resolution SLA is stated; the inbox must reach Ajay reliably and have a triage process. (Tracker: Phase 0.5 r94 grievance contact row.) Phase 0.5 contact is Ajay’s personal Gmail; will swap to <code>privacy@kindred.in</code> when <code>kindred.in</code> is registered (R238).</li>
+<li><strong>Account deletion actually erases data, including S3 record bytes and all object versions.</strong> Today’s <code>/auth/me DELETE</code> flow does not do this fully. (Tracker: Phase 0.5 r14 DPDPA hard-delete + r95 R12 S3 cascade rows.)</li>
+<li><strong>Per-record deletion erases all S3 versions, not just adds a delete-marker.</strong> (Tracker: Phase 1.5 record-deletion + delete-version row.)</li>
+<li><strong>The in-app privacy notice screen is wired</strong> — first-launch overlay + permanent link from Profile screen. (Tracker: Phase 0.5 r93 in-app privacy screen row.)</li>
+<li><strong>The web-based account deletion mechanism is live</strong> at the URL named in §9 above (<code>kindred.app/delete-account</code> or final domain). Required by Google Play Policy for any app with account creation, and required for the §9 promise to be honest. (Tracker: Phase 0.5 R236 web-based deletion row.)</li>
+<li><strong>Consent is captured affirmatively</strong> — a tap on a clearly-labelled “I agree” control, not a pre-ticked checkbox or implicit consent from continuing to use the app. (DPDPA Section 6.)</li>
+<li><strong>Patient-controlled creator-revocation is implemented</strong> for Scenario A (when a patient self-claims their record). The §7 promise that “if you are the patient yourself, you can revoke any caregiver — including the person who originally added you — without their cooperation” is currently true for non-creator caregivers but needs to extend to the creator when Scenario A ships. (Tracker: Phase 1 R234 patient-controlled creator-revocation row.)</li>
+</ol>
+<p>If any of these is not yet true when Internal Testing or any wider track is being considered, do <strong>not</strong> publish. Either complete the row, or revert the notice to “internal use only” and gate publication behind the dependency.</p>
+<h3 id="decisions-deferred-to-a-later-notice-version" tabindex="-1">Decisions deferred to a later notice version</h3>
+<p>These are honest gaps that will be filled when the corresponding feature lands. Don’t try to address them in this version — they don’t exist yet.</p>
+<ul>
+<li><strong>AI processing description</strong> — added when Phase 1 AI features ship, with fresh consent.</li>
+<li><strong>Push-notification content</strong> — added when FCM-based push (V1.5 vitals push, share-sent push) ships. Content of pushes will be enumerated explicitly so caregivers know what shows on a lock screen before they install.</li>
+<li><strong>Doctor-side data flow</strong> — added if/when a doctor surface ships, with the receiving-doctor’s data fiduciary status clarified.</li>
+<li><strong>Cross-border transfers</strong> — added only if Kindred ever stores or processes data outside India. As long as everything stays in Mumbai data centres, this section is unnecessary.</li>
+<li><strong>Significant Data Fiduciary (SDF) obligations</strong> — DPDPA may classify Kindred as an SDF based on volume / sensitivity once external usage scales. If/when designated, add: DPO contact, periodic DPIA cadence, independent audit cadence.</li>
+</ul>
+<h3 id="things-this-draft-deliberately-does-not-promise" tabindex="-1">Things this draft deliberately does not promise</h3>
+<p>To keep the notice honest and avoid commitments Kindred can’t yet keep:</p>
+<ul>
+<li>We do <strong>not</strong> promise a hardware security module, dedicated VPC, or single-tenant infrastructure. We use Oracle Cloud (backend) and AWS S3 (files) — both shared-tenant managed services in Mumbai.</li>
+<li>We do <strong>not</strong> promise zero-knowledge encryption. Kindred’s backend can read uploaded files (this is required for any future AI feature; honesty is better than overclaiming).</li>
+<li>We do <strong>not</strong> claim to be HIPAA-compliant. HIPAA is a US statute and does not apply. Indian frameworks (DPDPA, and where applicable Telemedicine Practice Guidelines 2020) are what we operate under.</li>
+<li>We do <strong>not</strong> publish a specific incident-notification SLA in this draft. DPDPA Section 8(6) and Cert-In’s 6-hour reporting will be addressed in the incident-response runbook (Phase 2 tracker row); the in-app notice will reference the runbook once it exists.</li>
+</ul>
+<h3 id="when-to-bump-the-version" tabindex="-1">When to bump the version</h3>
+<ul>
+<li>v0.1 → v0.2 <em>(2026-05-08, applied)</em>: added Vitals data category; switched backend host narrative from “AWS managed” to Oracle Cloud + AWS S3 split; added SQLCipher encryption-at-rest commitment per ADR 027; added web-based account deletion mechanism per Google Play Policy (R236); clarified patient-controlled caregiver revocation (R227, with R234 for the creator-revocation extension); added gating-list items for r93, R236, R234.</li>
+<li>v0.2 → v0.3: any further change to data categories, purposes, retention, or sharing before publication. Likely triggers: account-deletion stack (r14+r95+R236) lands, in-app screen (r93) wires up, push-notification content (R237 + r194 + r179-181) ships.</li>
+<li>v0.3 → v1.0: when this notice ships in-app and on the public web to external users for the first time, on the day of the first AAB upload to Internal Testing.</li>
+<li>v1.0 → v1.1, v1.2 …: any further changes; communicated via email + in-app prompt.</li>
+</ul>
+
+  </div>
+</body>
+</html>
