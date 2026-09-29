@@ -11,9 +11,8 @@ Public home for Kindred's legal pages, served via GitHub Pages at
 
 ## Source of truth
 
-The privacy notice content lives at `../kindred-docs/018-privacy-notice.md`
-(the `kindred-docs` folder, not this repo). Do not edit `index.html` by hand —
-run the build script and commit the output.
+The privacy notice content lives in `privacy-notice.md` in this repo. Do not edit
+`index.html` by hand — edit the Markdown, run the build script, and commit both.
 
 ## How to rebuild after a content update
 

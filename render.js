@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// render.js — converts ../kindred-docs/018-privacy-notice.md → index.html
+// render.js — converts privacy-notice.md → index.html
 // Run via: node render.js  (or npm run build)
 // Dependencies: markdown-it, markdown-it-attrs, markdown-it-anchor (local node_modules)
 
@@ -12,7 +12,7 @@ const MarkdownIt = require('markdown-it');
 const markdownItAttrs = require('markdown-it-attrs');
 const markdownItAnchor = require('markdown-it-anchor');
 
-const SRC = path.resolve(__dirname, '../kindred-docs/018-privacy-notice.md');
+const SRC = path.resolve(__dirname, 'privacy-notice.md');
 const OUT = path.resolve(__dirname, 'index.html');
 
 const md = MarkdownIt({ html: false, linkify: true, typographer: true })
