@@ -1,13 +1,15 @@
 # Kindred — Privacy Notice
 
-**Status:** DRAFT v0.3 · _Source-of-truth for the in-app notice and the public-hosted policy. Becomes effective when Kindred opens to Internal Testing on Google Play._ **Last updated:** 2026-05-11 **Effective:** When the first AAB lands on Google Play Internal Testing track. Until then, this is a draft.
+**Status:** v0.4 · _Testing stage: Kindred is used by the founder's family and invited testers only._ **Last updated:** 2026-09-29
 
 * * *
 
 ## In short — the 30-second version
 
 -   **Kindred is a personal health-records vault for caregivers.** You upload records (lab reports, prescriptions, doctor notes, etc.) for the people you care for, and log day-to-day vital readings (BP, blood sugar) for them.
--   **Your data lives in India** (Mumbai). The backend runs on Oracle Cloud; uploaded record files are stored in Amazon S3. Both are in Mumbai data centres.
+-   **Your data is stored in India** (Mumbai), on Oracle Cloud.
+-   **AI reads your reports** to explain them. Before a report goes to the AI, we remove names, phone numbers, email addresses and ID numbers from its text. The AI provider's servers may be outside India. See [AI reading of reports](#ai).
+-   **You can send reports on WhatsApp.** Our WhatsApp replies never contain your test values; those stay behind your Kindred sign-in. See [Using Kindred on WhatsApp](#whatsapp).
 -   **We don’t sell your data, ever.** We don’t share it with advertisers, marketers, or insurers.
 -   **You can delete your account and your records at any time.** When you do, the underlying files are erased — not soft-deleted.
 -   **One person to write to:** `ajaygaur319@gmail.com`. We respond to grievance and rights requests within 30 days.
@@ -53,6 +55,17 @@ We only collect data we actually need to run the app. Today, that means:
 -   The fact that you have invited them, and whether they accepted.
 -   A record of consent attestations (when, by which caregiver, on whose behalf) for invites and revocations, retained as a privacy / DPDPA audit trail.
 
+**WhatsApp data** (only if you use Kindred on WhatsApp)
+
+-   Your WhatsApp phone number, linked to your Kindred account after you confirm it.
+-   The files you send us on WhatsApp. They are stored like any other record.
+-   For each message: its type (file, text, button), when it arrived, and what Kindred did with it. We do **not** store the text of your WhatsApp messages.
+
+**AI readings**
+
+-   What the AI finds in a report: its type, date, lab or hospital, a short summary, the test results with their printed ranges, flags that need attention, and questions for the doctor.
+-   Each test result, stored separately so that we can show trends over time.
+
 **Operational logs**
 
 -   Server logs that record requests to our backend (timestamp, request path, response code, IP address). These exist for security, debugging, and abuse prevention.
@@ -71,6 +84,8 @@ We only collect data we actually need to run the app. Today, that means:
 | Health-record data | To store records on your behalf and show them back to you and the caregivers you authorise. |
 | Vital readings | To track day-to-day measurements, show trends to caregivers, and alert co-caregivers when a reading crosses a threshold the family has set. |
 | Caregiver-relationship data | To deliver invites, grant access to the records and vitals you’ve chosen to share, and keep an honest audit trail of who agreed to what and when. |
+| WhatsApp data | To receive reports you send on WhatsApp, file them under the right family member, and reply to you. |
+| AI readings | To explain a report in plain words, flag results that need attention, and show trends across reports. |
 | Operational logs | To keep the service secure, diagnose problems, and detect abuse. |
 
 We do not use any of this data for advertising, marketing profiling, or sale to third parties.
@@ -83,10 +98,9 @@ You can withdraw consent at any time — see [Your rights](#your-rights). Withdr
 
 ## 5. Where your data is stored {#storage-location}
 
--   **Region:** All your data is processed and stored in India. Your data does not leave India in normal operation.
+-   **Region:** Your data is stored in India. Three kinds of processing can happen outside India, each described in [Who we share it with](#sharing): AI reading of reports (the AI provider's servers), WhatsApp messages (Meta's servers), and test-name matching (TypeSafe's servers).
 -   **Backend service and database:** Hosted on Oracle Cloud Infrastructure, Mumbai region (`ap-mumbai-1`). The database is a SQLite file on an encrypted block volume — Oracle encrypts all block volumes by default, and we plan to add a second layer of application-level encryption (SQLCipher, AES-256) before opening to caregivers outside the founding family.
--   **Uploaded record files:** Stored in a private Amazon S3 bucket in Mumbai (`ap-south-1`). The bucket is not public; only the Kindred backend can authorise access.
--   **Encryption at rest — files:** S3 objects are encrypted using AWS-managed keys (SSE-S3) today. We plan to upgrade to customer-managed keys (SSE-KMS) before opening to a wider audience.
+-   **Uploaded record files:** During the testing stage, stored on the Kindred server's encrypted disk in Oracle Cloud Mumbai, and served only through short-lived signed links. Before opening to a wider audience, files move to a private Amazon S3 bucket in Mumbai (`ap-south-1`) with customer-managed keys.
 -   **Encryption at rest — database:** Oracle volume-encryption today; SQLCipher application-level encryption added before non-founding caregivers are invited.
 -   **Encryption in transit:** All app-to-server and server-to-storage traffic uses TLS.
 -   **Backups:** Encrypted backups of the database are kept on a separate location for up to 30 days; we deliberately keep the backup secret separately from the database secret so a single backup capture cannot be decrypted on its own.
@@ -99,6 +113,10 @@ You can withdraw consent at any time — see [Your rights](#your-rights). Withdr
 | Patient records you uploaded | Until you delete the record, or delete your account. After deletion, fully removed within 30 days, including all stored versions of the file. |
 | Vital readings you logged | Until the patient or you delete the reading, or you delete your account. After deletion, fully removed within 30 days. |
 | Caregiver invites and acceptance records | Until you remove the caregiver, or delete your account. Consent attestations linked to these events are retained for 3 years after the share ends, as a privacy / DPDPA audit trail. |
+| AI readings and the test results taken from them | As long as the record they came from. Deleting the record deletes them. |
+| WhatsApp link (your number ↔ your account) | Until you send **STOP**, or until 90 days pass with no message from you, or you delete your account. |
+| WhatsApp message log (type, time, outcome; no text) | 30 days, then deleted. |
+| A WhatsApp file waiting for you to say whose report it is | 24 hours, then deleted if you don't choose. |
 | Server logs (incl. IP address) | 90 days, then deleted. Retained for security and debugging. |
 | Sign-in audit logs | 90 days, then deleted. |
 | Operational backups | Up to 30 days on a rolling window. Deletion requests propagate to backups within 35 days of the request. |
@@ -111,7 +129,10 @@ We share your data with a small number of service providers (called **Data Proce
 
 -   **Google LLC** — for Google Sign-In, when you choose to sign in with Google. Google’s own privacy notice applies to that step.
 -   **Oracle Cloud Infrastructure (India)** — for hosting the backend service and the database, in their Mumbai region.
--   **Amazon Web Services India** — for hosting uploaded record files in their Mumbai region.
+-   **Amazon Web Services India** — for hosting uploaded record files in their Mumbai region, once files move to S3 (see [Where your data is stored](#storage-location)).
+-   **OpenRouter, Inc. and the AI model provider it routes to** — to read reports (see [AI reading of reports](#ai)). They receive report text with names, phone numbers, email addresses and ID numbers removed, plus the patient's age and sex. For photos and scanned PDFs, they receive the image itself, which can show personal details printed on it. Our production setting sends reports only to providers that promise not to keep or train on them.
+-   **TypeSafe (Jev)** — to match printed test names (e.g. "S. Creat") to standard tests. It receives test names and units only. During the testing stage, it also receives the first lines of a report sent on WhatsApp (which include the printed patient name, age and sex) to work out which family member the report is for.
+-   **Meta Platforms (WhatsApp Business Platform)** — if you use Kindred on WhatsApp. Messages and files you send to Kindred, and our replies, pass through Meta's servers, where WhatsApp's end-to-end encryption ends. Meta's own terms and privacy policy apply to WhatsApp.
 
 We also share data with **other caregivers you choose to invite**:
 
@@ -170,18 +191,34 @@ If you have a complaint about how we are handling your personal data, write to:
 
 If you are not satisfied with our response, you can complain to the **Data Protection Board of India** under DPDPA Section 13. The Board’s contact details and complaint process will be published on the Government of India’s official channels once the Board is fully constituted.
 
-## 12. Future changes — including AI features {#changes}
+## 12. AI reading of reports {#ai}
 
-The current Kindred app stores and shows your records. It does **not** use artificial intelligence to read, summarise, or analyse them.
+When a report is uploaded (on the web or on WhatsApp), Kindred asks an AI model to read it and explain it.
 
-When AI features launch — for example, generating a pre-visit brief from your records — the processing involved is materially different from what’s in this notice. Before any such feature processes your data, we will:
+-   **What the AI receives.** For a digital PDF: the report's text, after our own code (not an AI) removes the names of the patient and their caregivers, phone numbers, email addresses, Aadhaar and PAN numbers, and labelled IDs. If a name is still found after that step, the report is not sent at all. For a photo or a scanned PDF: the image itself, which can show personal details printed on it. With either, the patient's age and sex, so that ranges can be read correctly. Never the patient's name, your email, or your account details.
+-   **Where it runs.** On the servers of the AI provider that OpenRouter routes to, which may be outside India.
+-   **What it returns.** A short summary, the test results as printed, flags that need attention, and questions to ask the doctor. We check every value against the report text before we store it.
+-   **What it does not do.** It does not diagnose, and it does not advise starting or stopping any medicine. Check anything worrying with a doctor.
+-   **Choice.** During the testing stage, AI reading is on for every tester. Before Kindred opens to people outside the testing group, you will be asked for consent specifically for AI reading, and you will be able to keep it off.
 
-1.  Update this notice to describe exactly what the AI feature does, what data it processes, where it runs, and what it returns.
-2.  Ask you to consent again, specifically for that processing. You can refuse, and the AI features will simply remain off for your account.
+## 13. Using Kindred on WhatsApp {#whatsapp}
+
+-   **Joining.** You message the Kindred WhatsApp number. We reply with a one-time link. You sign in with Google, then tap **Yes, it's me** in WhatsApp. Your number is linked only after both steps. Nothing you send before that is stored.
+-   **What our replies contain.** The report's title, date and lab, a short summary with all numbers removed, the names of flagged results, and a link. Test values open only after you sign in to Kindred, so they stay out of your chat history.
+-   **Stopping.** Send **STOP** at any time to unlink your number. Records you already sent stay in your account until you delete them.
+-   **Changed number.** If WhatsApp tells us your number changed, or your number sends us nothing for 90 days, we unlink it. You join again from your new number.
+-   **Cost.** Kindred does not send you promotional messages on WhatsApp.
+
+## 14. Future changes {#changes}
+
+When a new feature processes your data in a way this notice does not describe — for example, generating a pre-visit brief from your records — we will:
+
+1.  Update this notice to describe exactly what the feature does, what data it processes, where it runs, and what it returns.
+2.  Ask you to consent again, specifically for that processing. You can refuse, and the feature will stay off for your account.
 
 For other changes (e.g., adding a new feature, switching a service provider), we will update this notice and post the change date at the top. Material changes will be communicated by email and through an in-app prompt.
 
-## 13. How to reach us {#contact}
+## 15. How to reach us {#contact}
 
 For anything in this notice — questions, rights requests, grievances, corrections — write to:
 
@@ -210,6 +247,8 @@ These anchors are part of the contract. Don’t rename them — Phase 0.5 in-app
 -   `#exercise-rights`
 -   `#childrens-data`
 -   `#grievance`
+-   `#ai`
+-   `#whatsapp`
 -   `#changes`
 -   `#contact`
 
@@ -224,6 +263,8 @@ The notice makes promises Kindred has to actually keep. Block Internal Testing p
 5.  **The web-based account deletion mechanism is live** at the URL named in §9 above (`kindred.app/delete-account` or final domain). Required by Google Play Policy for any app with account creation, and required for the §9 promise to be honest. (Tracker: Phase 0.5 R236 web-based deletion row.)
 6.  **Consent is captured affirmatively** — a tap on a clearly-labelled “I agree” control, not a pre-ticked checkbox or implicit consent from continuing to use the app. (DPDPA Section 6.)
 7.  **Patient-controlled creator-revocation is implemented** for Scenario A (when a patient self-claims their record). The §7 promise that “if you are the patient yourself, you can revoke any caregiver — including the person who originally added you — without their cooperation” is currently true for non-creator caregivers but needs to extend to the creator when Scenario A ships. (Tracker: Phase 1 R234 patient-controlled creator-revocation row.)
+8.  **Consent for AI reading and for WhatsApp is captured** before any person outside the testing group uses Kindred (§12). Until then, AI reading is on for all testers. (Added in v0.4.)
+9.  **Photos and scans are redacted before AI reading**, or the notice keeps saying they are sent as images (§12). OCR with in-code redaction is planned. (Added in v0.4.)
 
 If any of these is not yet true when Internal Testing or any wider track is being considered, do **not** publish. Either complete the row, or revert the notice to “internal use only” and gate publication behind the dependency.
 
@@ -231,10 +272,10 @@ If any of these is not yet true when Internal Testing or any wider track is bein
 
 These are honest gaps that will be filled when the corresponding feature lands. Don’t try to address them in this version — they don’t exist yet.
 
--   **AI processing description** — added when Phase 1 AI features ship, with fresh consent.
+-   **AI processing description** — added in v0.4 (§12). Fresh consent is gating item 8.
 -   **Push-notification content** — added when FCM-based push (V1.5 vitals push, share-sent push) ships. Content of pushes will be enumerated explicitly so caregivers know what shows on a lock screen before they install.
 -   **Doctor-side data flow** — added if/when a doctor surface ships, with the receiving-doctor’s data fiduciary status clarified.
--   **Cross-border transfers** — added only if Kindred ever stores or processes data outside India. As long as everything stays in Mumbai data centres, this section is unnecessary.
+-   **Cross-border transfers** — v0.4 names the three kinds of processing outside India (§5). A formal transfer section is needed before the notice reaches users outside the testing group.
 -   **Significant Data Fiduciary (SDF) obligations** — DPDPA may classify Kindred as an SDF based on volume / sensitivity once external usage scales. If/when designated, add: DPO contact, periodic DPIA cadence, independent audit cadence.
 
 ### Things this draft deliberately does not promise
@@ -250,5 +291,6 @@ To keep the notice honest and avoid commitments Kindred can’t yet keep:
 
 -   v0.1 → v0.2 _(2026-05-08, applied)_: added Vitals data category; switched backend host narrative from “AWS managed” to Oracle Cloud + AWS S3 split; added SQLCipher encryption-at-rest commitment per ADR 027; added web-based account deletion mechanism per Google Play Policy (R236); clarified patient-controlled caregiver revocation (R227, with R234 for the creator-revocation extension); added gating-list items for r93, R236, R234.
 -   v0.2 → v0.3: any further change to data categories, purposes, retention, or sharing before publication. Likely triggers: account-deletion stack (r14+r95+R236) lands, in-app screen (r93) wires up, push-notification content (R237 + r194 + r179-181) ships.
--   v0.3 → v1.0: when this notice ships in-app and on the public web to external users for the first time, on the day of the first AAB upload to Internal Testing.
+-   v0.3 → v0.4 _(2026-09-29, applied)_: AI reading of reports (§12), WhatsApp (§13), new processors (OpenRouter and model providers, TypeSafe, Meta), processing outside India, testing-stage file storage on the Oracle server, retention for readings and WhatsApp data. Markdown source moved into this repo.
+-   v0.4 → v1.0: when this notice ships in-app and on the public web to external users for the first time, on the day of the first AAB upload to Internal Testing.
 -   v1.0 → v1.1, v1.2 …: any further changes; communicated via email + in-app prompt.
