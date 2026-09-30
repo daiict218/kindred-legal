@@ -133,7 +133,7 @@
 <body>
   <div class="content">
 <h1 id="kindred-privacy-notice" tabindex="-1">Kindred — Privacy Notice</h1>
-<p><strong>Status:</strong> v0.8 · <em>Testing stage: Kindred is used by the founder’s family and invited testers only.</em> <strong>Last updated:</strong> 2026-09-30</p>
+<p><strong>Status:</strong> v0.9 · <em>Testing stage: Kindred is used by the founder’s family and invited testers only.</em> <strong>Last updated:</strong> 2026-09-30</p>
 <hr>
 <h2 id="in-short-the-30-second-version" tabindex="-1">In short — the 30-second version</h2>
 <ul>
@@ -262,11 +262,11 @@
 <h2 id="storage-location" tabindex="-1">5. Where your data is stored</h2>
 <ul>
 <li><strong>Region:</strong> Your data is stored in India. Three kinds of processing can happen outside India, each described in <a href="#sharing">Who we share it with</a>: AI reading of reports (the AI provider’s servers), WhatsApp messages (Meta’s servers), and test-name matching (TypeSafe’s servers).</li>
-<li><strong>Backend service and database:</strong> Hosted on Oracle Cloud Infrastructure, Mumbai region (<code>ap-mumbai-1</code>). The database is a SQLite file on an encrypted block volume — Oracle encrypts all block volumes by default, and we plan to add a second layer of application-level encryption (SQLCipher, AES-256) before opening to caregivers outside the founding family.</li>
+<li><strong>Backend service and database:</strong> Hosted on Oracle Cloud Infrastructure, Mumbai region (<code>ap-mumbai-1</code>). The database is a SQLite file on an encrypted block volume (Oracle encrypts all block volumes by default), and the file itself is encrypted by Kindred with SQLCipher (AES-256), so a copy of the file cannot be read without its key.</li>
 <li><strong>Uploaded record files:</strong> During the testing stage, stored on the Kindred server’s encrypted disk in Oracle Cloud Mumbai, and served only through short-lived signed links. Before opening to a wider audience, files move to a private Amazon S3 bucket in Mumbai (<code>ap-south-1</code>) with customer-managed keys.</li>
-<li><strong>Encryption at rest — database:</strong> Oracle volume-encryption today; SQLCipher application-level encryption added before non-founding caregivers are invited.</li>
+<li><strong>Encryption at rest — database:</strong> two layers since 30 September 2026: Oracle volume encryption, and SQLCipher (AES-256) encryption of the database file by the application. The key is stored apart from the file.</li>
 <li><strong>Encryption in transit:</strong> All app-to-server and server-to-storage traffic uses TLS.</li>
-<li><strong>Backups:</strong> Encrypted backups of the database are kept on a separate location for up to 30 days; we deliberately keep the backup secret separately from the database secret so a single backup capture cannot be decrypted on its own.</li>
+<li><strong>Backups:</strong> Database backups are encrypted with a separate backup key that the running application never holds, so a backup cannot be decrypted with the database key alone. During the testing stage they are kept on the same server for up to 14 days; before Kindred opens to a wider audience, they will also be copied off the server, encrypted.</li>
 </ul>
 <h2 id="retention" tabindex="-1">6. How long we keep your data</h2>
 <table>
@@ -500,7 +500,8 @@
 <li>v0.5 → v0.6 <em>(2026-09-30, applied)</em>: deletion now hides at once, can be undone for 24 hours, then erases for good (In short, §6, §9); account deletion leaves an anonymous placeholder; web deletion is Profile → Delete my account instead of a planned URL.</li>
 <li>v0.6 → v0.7 <em>(2026-09-30, applied)</em>: “Report this answer” on AI output (Google Play AI-generated content policy): what a report keeps and for how long (In short, §2, §3, §6, #ask).</li>
 <li>v0.7 → v0.8 <em>(2026-09-30, applied)</em>: consent screen with an explicit “I agree” and a separate AI choice that is off unless ticked (§2, §4, §6, §12, #ask, §13); consent records and their retention; launch gates 6 and 8 done.</li>
-<li>v0.8 → v1.0: when this notice ships in-app and on the public web to external users for the first time, on the day of the first AAB upload to Internal Testing.</li>
+<li>v0.8 → v0.9 <em>(2026-09-30, applied)</em>: database encryption (SQLCipher, AES-256) is live; backups use a separate key; testing-stage backups stay on the server for up to 14 days (§5).</li>
+<li>v0.9 → v1.0: when this notice ships in-app and on the public web to external users for the first time, on the day of the first AAB upload to Internal Testing.</li>
 <li>v1.0 → v1.1, v1.2 …: any further changes; communicated via email + in-app prompt.</li>
 </ul>
 
