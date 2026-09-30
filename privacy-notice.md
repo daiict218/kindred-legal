@@ -1,6 +1,6 @@
 # Kindred — Privacy Notice
 
-**Status:** v0.8 · _Testing stage: Kindred is used by the founder's family and invited testers only._ **Last updated:** 2026-09-30
+**Status:** v0.9 · _Testing stage: Kindred is used by the founder's family and invited testers only._ **Last updated:** 2026-09-30
 
 * * *
 
@@ -110,11 +110,11 @@ You can withdraw consent at any time — see [Your rights](#your-rights). Withdr
 ## 5. Where your data is stored {#storage-location}
 
 -   **Region:** Your data is stored in India. Three kinds of processing can happen outside India, each described in [Who we share it with](#sharing): AI reading of reports (the AI provider's servers), WhatsApp messages (Meta's servers), and test-name matching (TypeSafe's servers).
--   **Backend service and database:** Hosted on Oracle Cloud Infrastructure, Mumbai region (`ap-mumbai-1`). The database is a SQLite file on an encrypted block volume — Oracle encrypts all block volumes by default, and we plan to add a second layer of application-level encryption (SQLCipher, AES-256) before opening to caregivers outside the founding family.
+-   **Backend service and database:** Hosted on Oracle Cloud Infrastructure, Mumbai region (`ap-mumbai-1`). The database is a SQLite file on an encrypted block volume (Oracle encrypts all block volumes by default), and the file itself is encrypted by Kindred with SQLCipher (AES-256), so a copy of the file cannot be read without its key.
 -   **Uploaded record files:** During the testing stage, stored on the Kindred server's encrypted disk in Oracle Cloud Mumbai, and served only through short-lived signed links. Before opening to a wider audience, files move to a private Amazon S3 bucket in Mumbai (`ap-south-1`) with customer-managed keys.
--   **Encryption at rest — database:** Oracle volume-encryption today; SQLCipher application-level encryption added before non-founding caregivers are invited.
+-   **Encryption at rest — database:** two layers since 30 September 2026: Oracle volume encryption, and SQLCipher (AES-256) encryption of the database file by the application. The key is stored apart from the file.
 -   **Encryption in transit:** All app-to-server and server-to-storage traffic uses TLS.
--   **Backups:** Encrypted backups of the database are kept on a separate location for up to 30 days; we deliberately keep the backup secret separately from the database secret so a single backup capture cannot be decrypted on its own.
+-   **Backups:** Database backups are encrypted with a separate backup key that the running application never holds, so a backup cannot be decrypted with the database key alone. During the testing stage they are kept on the same server for up to 14 days; before Kindred opens to a wider audience, they will also be copied off the server, encrypted.
 
 ## 6. How long we keep your data {#retention}
 
@@ -323,5 +323,6 @@ To keep the notice honest and avoid commitments Kindred can’t yet keep:
 -   v0.5 → v0.6 _(2026-09-30, applied)_: deletion now hides at once, can be undone for 24 hours, then erases for good (In short, §6, §9); account deletion leaves an anonymous placeholder; web deletion is Profile → Delete my account instead of a planned URL.
 -   v0.6 → v0.7 _(2026-09-30, applied)_: "Report this answer" on AI output (Google Play AI-generated content policy): what a report keeps and for how long (In short, §2, §3, §6, #ask).
 -   v0.7 → v0.8 _(2026-09-30, applied)_: consent screen with an explicit "I agree" and a separate AI choice that is off unless ticked (§2, §4, §6, §12, #ask, §13); consent records and their retention; launch gates 6 and 8 done.
--   v0.8 → v1.0: when this notice ships in-app and on the public web to external users for the first time, on the day of the first AAB upload to Internal Testing.
+-   v0.8 → v0.9 _(2026-09-30, applied)_: database encryption (SQLCipher, AES-256) is live; backups use a separate key; testing-stage backups stay on the server for up to 14 days (§5).
+-   v0.9 → v1.0: when this notice ships in-app and on the public web to external users for the first time, on the day of the first AAB upload to Internal Testing.
 -   v1.0 → v1.1, v1.2 …: any further changes; communicated via email + in-app prompt.
