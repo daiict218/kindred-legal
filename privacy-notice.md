@@ -1,6 +1,6 @@
 # Kindred — Privacy Notice
 
-**Status:** v0.7 · _Testing stage: Kindred is used by the founder's family and invited testers only._ **Last updated:** 2026-09-30
+**Status:** v0.8 · _Testing stage: Kindred is used by the founder's family and invited testers only._ **Last updated:** 2026-09-30
 
 * * *
 
@@ -36,6 +36,7 @@ We only collect data we actually need to run the app. Today, that means:
 -   Your name, email address, and Google profile picture (when you sign in with Google).
 -   Your Google account identifier (a unique ID Google issues to us).
 -   The language you choose for Kindred and its WhatsApp messages.
+-   Your consent choices: that you agreed to this notice, which version, whether AI reading is on, and when — each time you choose or change.
 
 **Health-record data you upload**
 
@@ -102,7 +103,7 @@ We do not use any of this data for advertising, marketing profiling, or sale to 
 
 ## 4. Legal basis for processing {#legal-basis}
 
-We process your personal data on the basis of your **consent**, given when you sign up and when you upload data on behalf of a patient (DPDPA Section 6). Operational logs are processed on the basis of legitimate uses (security and service operation) under DPDPA Section 7.
+We process your personal data on the basis of your **consent** (DPDPA Section 6). The first time you use Kindred — and again whenever what you agree to changes — you tick **"I have read the Privacy Notice and I agree to it"** and tap **I agree**. Nothing is pre-ticked, and Kindred stores or files nothing for you until you do. AI reading is a separate choice on the same screen, off unless you tick it (see [AI reading of reports](#ai)); you can change it at any time in Profile. Records you add for the people you care for are added by you, as their caregiver, on their behalf. Operational logs are processed on the basis of legitimate uses (security and service operation) under DPDPA Section 7.
 
 You can withdraw consent at any time — see [Your rights](#your-rights). Withdrawal applies going forward and does not affect processing that has already happened.
 
@@ -130,6 +131,7 @@ You can withdraw consent at any time — see [Your rights](#your-rights). Withdr
 | One-time join links | Until used, or 7 days, whichever comes first. The record of who created and used it stays with the caregiver audit trail. |
 | Questions you ask Kindred, and the answers | Not stored, unless you report an answer (next row). |
 | AI answers you report (your reason, your note, and the answer's text) | 90 days, then deleted. Also deleted with the report it is about, or with your account. |
+| Your consent choices (which version of this notice, AI reading yes or no, when) | While your account exists, and 3 years after it is erased, as the record of your consent. They hold no name or email address. |
 | Server logs (incl. IP address) | 90 days, then deleted. Retained for security and debugging. |
 | Sign-in audit logs | 90 days, then deleted. |
 | Operational backups | Up to 30 days on a rolling window. Deletion requests propagate to backups within 35 days of the request. |
@@ -213,7 +215,7 @@ When a report is uploaded (on the web or on WhatsApp), Kindred asks an AI model 
 -   **Where it runs.** On the servers of the AI provider that OpenRouter routes to, which may be outside India.
 -   **What it returns.** A short summary, the test results as printed, flags that need attention, and questions to ask the doctor. We check every value against the report text before we store it.
 -   **What it does not do.** It does not diagnose, and it does not advise starting or stopping any medicine. Check anything worrying with a doctor.
--   **Choice.** During the testing stage, AI reading is on for every tester. Before Kindred opens to people outside the testing group, you will be asked for consent specifically for AI reading, and you will be able to keep it off.
+-   **Choice.** AI reading is off unless you turn it on — on the consent screen when you start, or later in Profile. While it is off, reports you add are stored and shown but not read, and nothing goes to the AI. Turning it off stops new readings; readings already made stay with their reports until you delete them.
 
 ### Asking Kindred and visit briefs {#ask}
 
@@ -221,12 +223,13 @@ When a report is uploaded (on the web or on WhatsApp), Kindred asks an AI model 
 -   **What the AI receives.** Your question, with every name we hold for your family replaced by a relation label (for example "[Mother]") and phone numbers, email addresses and IDs removed. If a name is still found after that step, the question is not sent. The records it looks up carry no names, file names, doctor names or your notes.
 -   **What we keep.** Nothing: questions and answers are not saved, on our servers or in your browser. The one exception is an answer you choose to report with **Report this answer**: we keep it for 90 days to check it (see [How long we keep your data](#retention)).
 -   **Visit brief.** The brief's numbers come straight from your records and home logs, not from the AI. Only its short summary and the suggested questions for the doctor are written by the AI, in the same way as an answer on the Ask page.
--   **Where it runs, and choice.** The same as report reading above: an AI provider that may be outside India, and during the testing stage it is on for every tester. Before Kindred opens to people outside the testing group, you will be asked for consent for these AI features, and you will be able to keep them off.
+-   **Where it runs, and choice.** The same as report reading above: an AI provider that may be outside India, and only if you turned AI reading on. With it off, the Ask page and the brief's summary say so instead of asking the AI; the rest of the brief still shows.
 
 ## 13. Using Kindred on WhatsApp {#whatsapp}
 
 -   **Joining.** You message the Kindred WhatsApp number. We reply with a one-time link. You sign in with Google, then tap **Yes, it's me** in WhatsApp. Your number is linked only after both steps. Nothing you send before that is stored.
 -   **What our replies contain.** The report's title, date and lab, a short summary with all numbers removed, the names of flagged results, and a link. Test values open only after you sign in to Kindred, so they stay out of your chat history.
+-   **Consent first.** Kindred files a report you send on WhatsApp only after you have agreed to this notice; until then it replies with a link to agree first. With AI reading off, a report you send is filed but not read, and the reply says so.
 -   **Stopping.** Send **STOP** at any time to unlink your number. Records you already sent stay in your account until you delete them.
 -   **Changed number.** If WhatsApp tells us your number changed, or your number sends us nothing for 90 days, we unlink it. You join again from your new number.
 -   **Language.** Kindred's messages use the language you choose. Test names and values stay in English.
@@ -285,9 +288,9 @@ The notice makes promises Kindred has to actually keep. Block Internal Testing p
 3.  **Per-record deletion erases all S3 versions, not just adds a delete-marker.** (Tracker: Phase 1.5 record-deletion + delete-version row.)
 4.  **The in-app privacy notice screen is wired** — first-launch overlay + permanent link from Profile screen. (Tracker: Phase 0.5 r93 in-app privacy screen row.)
 5.  **The web-based account deletion mechanism is live** — _done 2026-09-30:_ Profile → Delete my account on the web app (§9). Required by Google Play Policy for any app with account creation, and required for the §9 promise to be honest. (Tracker: Phase 0.5 R236 web-based deletion row.)
-6.  **Consent is captured affirmatively** — a tap on a clearly-labelled “I agree” control, not a pre-ticked checkbox or implicit consent from continuing to use the app. (DPDPA Section 6.)
+6.  **Consent is captured affirmatively** — a tap on a clearly-labelled “I agree” control, not a pre-ticked checkbox or implicit consent from continuing to use the app. (DPDPA Section 6.) _Done 2026-09-30:_ consent screen in the app and web app (unticked "I agree"), stored per version; the API refuses everything else until then.
 7.  **Patient-controlled creator-revocation is implemented** for Scenario A (when a patient self-claims their record). The §7 promise that “if you are the patient yourself, you can revoke any caregiver — including the person who originally added you — without their cooperation” is currently true for non-creator caregivers but needs to extend to the creator when Scenario A ships. (Tracker: Phase 1 R234 patient-controlled creator-revocation row.)
-8.  **Consent for AI reading and for WhatsApp is captured** before any person outside the testing group uses Kindred (§12). Until then, AI reading is on for all testers. (Added in v0.4.)
+8.  **Consent for AI reading and for WhatsApp is captured** before any person outside the testing group uses Kindred (§12). Until then, AI reading is on for all testers. (Added in v0.4.) _Done 2026-09-30:_ AI reading is a separate unticked choice, enforced by the server for report reading, Ask and briefs; WhatsApp files nothing before consent.
 9.  **Photos and scans are redacted before AI reading**, or the notice keeps saying they are sent as images (§12). OCR with in-code redaction is planned. (Added in v0.4.)
 
 If any of these is not yet true when Internal Testing or any wider track is being considered, do **not** publish. Either complete the row, or revert the notice to “internal use only” and gate publication behind the dependency.
@@ -319,5 +322,6 @@ To keep the notice honest and avoid commitments Kindred can’t yet keep:
 -   v0.4 → v0.5 _(2026-09-30, applied)_: Asking Kindred and visit briefs (§12, #ask), questions not stored, language preference, one-time join links and WhatsApp invites/shares sent from the user's own WhatsApp (§2, §6, §7), language of WhatsApp messages (§13).
 -   v0.5 → v0.6 _(2026-09-30, applied)_: deletion now hides at once, can be undone for 24 hours, then erases for good (In short, §6, §9); account deletion leaves an anonymous placeholder; web deletion is Profile → Delete my account instead of a planned URL.
 -   v0.6 → v0.7 _(2026-09-30, applied)_: "Report this answer" on AI output (Google Play AI-generated content policy): what a report keeps and for how long (In short, §2, §3, §6, #ask).
--   v0.7 → v1.0: when this notice ships in-app and on the public web to external users for the first time, on the day of the first AAB upload to Internal Testing.
+-   v0.7 → v0.8 _(2026-09-30, applied)_: consent screen with an explicit "I agree" and a separate AI choice that is off unless ticked (§2, §4, §6, §12, #ask, §13); consent records and their retention; launch gates 6 and 8 done.
+-   v0.8 → v1.0: when this notice ships in-app and on the public web to external users for the first time, on the day of the first AAB upload to Internal Testing.
 -   v1.0 → v1.1, v1.2 …: any further changes; communicated via email + in-app prompt.
