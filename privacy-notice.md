@@ -1,6 +1,6 @@
 # Kindred — Privacy Notice
 
-**Status:** v0.5 · _Testing stage: Kindred is used by the founder's family and invited testers only._ **Last updated:** 2026-09-30
+**Status:** v0.6 · _Testing stage: Kindred is used by the founder's family and invited testers only._ **Last updated:** 2026-09-30
 
 * * *
 
@@ -12,7 +12,7 @@
 -   **You can ask Kindred questions about your family's records**, and make a one-page brief for a doctor visit. The AI sees relations ("your mother"), never names, and we do not save your questions. See [Asking Kindred and visit briefs](#ask).
 -   **You can send reports on WhatsApp.** Our WhatsApp replies never contain your test values; those stay behind your Kindred sign-in. See [Using Kindred on WhatsApp](#whatsapp).
 -   **We don’t sell your data, ever.** We don’t share it with advertisers, marketers, or insurers.
--   **You can delete your account and your records at any time.** When you do, the underlying files are erased — not soft-deleted.
+-   **You can delete your account and your records at any time.** Deleting hides the item at once. For 24 hours you (or anyone who looks after that person) can undo it, in case of a mistake. Then the files and data are erased for good — not just hidden.
 -   **One person to write to:** `ajaygaur319@gmail.com`. We respond to grievance and rights requests within 30 days.
 
 The full notice is below. Read it once. The short version above is what most caregivers need to know.
@@ -117,9 +117,9 @@ You can withdraw consent at any time — see [Your rights](#your-rights). Withdr
 
 | Type of data | Retention |
 | --- | --- |
-| Account data (name, email, profile picture, Google ID) | Until you delete your account. After deletion, fully removed within 30 days. |
-| Patient records you uploaded | Until you delete the record, or delete your account. After deletion, fully removed within 30 days, including all stored versions of the file. |
-| Vital readings you logged | Until the patient or you delete the reading, or you delete your account. After deletion, fully removed within 30 days. |
+| Account data (name, email, profile picture, Google ID) | Until you delete your account. Your account is locked at once and erased 24 hours later (you can undo until then). What remains is an anonymous placeholder with no name, email, Google ID or picture, so that reports you added for people others look after stay with those people. |
+| Patient records you uploaded | Until you delete the record, or delete your account. A deleted record is hidden at once and erased 24 hours later, file first (you or another caregiver of that person can undo until then). Deleting a person hides and then erases all of their records the same way. |
+| Vital readings you logged | Until the person they belong to is deleted, or you delete your account (if no one else looks after that person). Erased 24 hours after the request, like records. |
 | Caregiver invites and acceptance records | Until you remove the caregiver, or delete your account. Consent attestations linked to these events are retained for 3 years after the share ends, as a privacy / DPDPA audit trail. |
 | AI readings and the test results taken from them | As long as the record they came from. Deleting the record deletes them. |
 | WhatsApp link (your number ↔ your account) | Until you send **STOP**, or until 90 days pass with no message from you, or you delete your account. |
@@ -178,8 +178,8 @@ For data **about a patient you care for** (e.g., your aging parent), the patient
 
 Three ways:
 
--   **In the app** — for the most common actions (delete a record, delete your account, remove a caregiver), use the in-app option. It is faster and produces the same result as a written request.
--   **On the web** — to delete your account without installing the app (for example, from a borrowed phone, or after uninstalling), visit **`https://kindred.app/delete-account`** and complete the flow. This is the same end result as the in-app deletion.
+-   **In the app** — for the most common actions (delete a record, delete a person, delete your account, remove a caregiver), use the in-app option. It is faster and produces the same result as a written request. A deletion takes effect at once and becomes permanent after 24 hours; until then it can be undone.
+-   **On the web** — to delete your account without installing the app (for example, from a borrowed phone, or after uninstalling), sign in to the Kindred web app and choose **Profile → Delete my account**. This is the same end result as in the app.
 -   **By email** — write to **`ajaygaur319@gmail.com`** with a short description of the request. Please mention the email address of your Kindred account so we can verify your identity.
 
 We respond to all requests within 30 days. Most are completed within 7 days.
@@ -278,10 +278,10 @@ These anchors are part of the contract. Don’t rename them — Phase 0.5 in-app
 The notice makes promises Kindred has to actually keep. Block Internal Testing publication (and all later tracks) until each of these is true:
 
 1.  **`ajaygaur319@gmail.com` is a monitored inbox.** A 7-day acknowledgement and 30-day resolution SLA is stated; the inbox must reach Ajay reliably and have a triage process. (Tracker: Phase 0.5 r94 grievance contact row.) Phase 0.5 contact is Ajay’s personal Gmail; will swap to `privacy@kindred.in` when `kindred.in` is registered (R238).
-2.  **Account deletion actually erases data, including S3 record bytes and all object versions.** Today’s `/auth/me DELETE` flow does not do this fully. (Tracker: Phase 0.5 r14 DPDPA hard-delete + r95 R12 S3 cascade rows.)
+2.  **Account deletion actually erases data, including S3 record bytes and all object versions.** _Done for files on the Kindred server (testing stage), 2026-09-30:_ `DELETE /auth/me` erases files and data 24 hours after the request. Still open: all object versions once files move to a versioned S3 bucket. (Tracker: Phase 0.5 r14 DPDPA hard-delete + r95 R12 S3 cascade rows.)
 3.  **Per-record deletion erases all S3 versions, not just adds a delete-marker.** (Tracker: Phase 1.5 record-deletion + delete-version row.)
 4.  **The in-app privacy notice screen is wired** — first-launch overlay + permanent link from Profile screen. (Tracker: Phase 0.5 r93 in-app privacy screen row.)
-5.  **The web-based account deletion mechanism is live** at the URL named in §9 above (`kindred.app/delete-account` or final domain). Required by Google Play Policy for any app with account creation, and required for the §9 promise to be honest. (Tracker: Phase 0.5 R236 web-based deletion row.)
+5.  **The web-based account deletion mechanism is live** — _done 2026-09-30:_ Profile → Delete my account on the web app (§9). Required by Google Play Policy for any app with account creation, and required for the §9 promise to be honest. (Tracker: Phase 0.5 R236 web-based deletion row.)
 6.  **Consent is captured affirmatively** — a tap on a clearly-labelled “I agree” control, not a pre-ticked checkbox or implicit consent from continuing to use the app. (DPDPA Section 6.)
 7.  **Patient-controlled creator-revocation is implemented** for Scenario A (when a patient self-claims their record). The §7 promise that “if you are the patient yourself, you can revoke any caregiver — including the person who originally added you — without their cooperation” is currently true for non-creator caregivers but needs to extend to the creator when Scenario A ships. (Tracker: Phase 1 R234 patient-controlled creator-revocation row.)
 8.  **Consent for AI reading and for WhatsApp is captured** before any person outside the testing group uses Kindred (§12). Until then, AI reading is on for all testers. (Added in v0.4.)
@@ -314,5 +314,6 @@ To keep the notice honest and avoid commitments Kindred can’t yet keep:
 -   v0.2 → v0.3: any further change to data categories, purposes, retention, or sharing before publication. Likely triggers: account-deletion stack (r14+r95+R236) lands, in-app screen (r93) wires up, push-notification content (R237 + r194 + r179-181) ships.
 -   v0.3 → v0.4 _(2026-09-29, applied)_: AI reading of reports (§12), WhatsApp (§13), new processors (OpenRouter and model providers, TypeSafe, Meta), processing outside India, testing-stage file storage on the Oracle server, retention for readings and WhatsApp data. Markdown source moved into this repo.
 -   v0.4 → v0.5 _(2026-09-30, applied)_: Asking Kindred and visit briefs (§12, #ask), questions not stored, language preference, one-time join links and WhatsApp invites/shares sent from the user's own WhatsApp (§2, §6, §7), language of WhatsApp messages (§13).
--   v0.5 → v1.0: when this notice ships in-app and on the public web to external users for the first time, on the day of the first AAB upload to Internal Testing.
+-   v0.5 → v0.6 _(2026-09-30, applied)_: deletion now hides at once, can be undone for 24 hours, then erases for good (In short, §6, §9); account deletion leaves an anonymous placeholder; web deletion is Profile → Delete my account instead of a planned URL.
+-   v0.6 → v1.0: when this notice ships in-app and on the public web to external users for the first time, on the day of the first AAB upload to Internal Testing.
 -   v1.0 → v1.1, v1.2 …: any further changes; communicated via email + in-app prompt.
