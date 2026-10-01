@@ -133,7 +133,7 @@
 <body>
   <div class="content">
 <h1 id="kindred-privacy-notice" tabindex="-1">Kindred — Privacy Notice</h1>
-<p><strong>Status:</strong> v0.9 · <em>Testing stage: Kindred is used by the founder’s family and invited testers only.</em> <strong>Last updated:</strong> 2026-09-30</p>
+<p><strong>Status:</strong> v0.10 · <em>Testing stage: Kindred is used by the founder’s family and invited testers only.</em> <strong>Last updated:</strong> 2026-10-01</p>
 <hr>
 <h2 id="in-short-the-30-second-version" tabindex="-1">In short — the 30-second version</h2>
 <ul>
@@ -142,6 +142,7 @@
 <li><strong>AI reads your reports</strong> to explain them. Before a report goes to the AI, we remove names, phone numbers, email addresses and ID numbers from its text. The AI provider’s servers may be outside India. See <a href="#ai">AI reading of reports</a>.</li>
 <li><strong>You can ask Kindred questions about your family’s records</strong>, and make a one-page brief for a doctor visit. The AI sees relations (“your mother”), never names, and we do not save your questions (unless you report an answer as wrong or harmful). See <a href="#ask">Asking Kindred and visit briefs</a>.</li>
 <li><strong>You can send reports on WhatsApp.</strong> Our WhatsApp replies never contain your test values; those stay behind your Kindred sign-in. See <a href="#whatsapp">Using Kindred on WhatsApp</a>.</li>
+<li><strong>Phone notifications.</strong> When someone else in your family adds a report or a reading, the Kindred app can tell you. Google delivers only a signal with numbers that identify the item, never names or health values. Your phone then gets the text from Kindred over your signed-in connection. See <a href="#sharing">Who we share it with</a>.</li>
 <li><strong>We don’t sell your data, ever.</strong> We don’t share it with advertisers, marketers, or insurers.</li>
 <li><strong>You can delete your account and your records at any time.</strong> Deleting hides the item at once. For 24 hours you (or anyone who looks after that person) can undo it, in case of a mistake. Then the files and data are erased for good — not just hidden.</li>
 <li><strong>One person to write to:</strong> <code>ajaygaur319@gmail.com</code>. We respond to grievance and rights requests within 30 days.</li>
@@ -198,6 +199,12 @@
 <li>We do <strong>not</strong> store your questions or Kindred’s answers. The chat stays on your screen and is gone when you close the page. We log only that a question was asked, how long the answer took, and which reports it cited.</li>
 <li>If you tap <strong>Report this answer</strong> under an AI answer or a report’s reading, we keep your report: the reason you chose, your note if you wrote one, and — for an Ask answer or a visit-brief summary — the text of that answer. For a report’s reading we keep only which report it was, because the reading is already stored.</li>
 </ul>
+<p><strong>Phone notifications</strong> (Kindred Android app)</p>
+<ul>
+<li>A push token for each phone where you are signed in to the Kindred app: a random code from Google’s Firebase Cloud Messaging that lets us send a notification to that phone. We keep which account it belongs to, the platform (Android) and when it was last used.</li>
+<li>We do <strong>not</strong> store the notifications. Each one is made when your phone asks for it, in your language, after we check that you still look after that person. It shows the person’s first name and what was added, for example “Papa · BP 150/92 · added by Riya”, or a report’s title and the names of results that need attention.</li>
+<li>On a locked phone the notification hides its text, unless your phone is set to show all notification content on the lock screen. You can turn Kindred’s notifications off in your phone’s settings at any time.</li>
+</ul>
 <p><strong>Operational logs</strong></p>
 <ul>
 <li>Server logs that record requests to our backend (timestamp, request path, response code, IP address). These exist for security, debugging, and abuse prevention.</li>
@@ -248,6 +255,10 @@
 <tr>
 <td>Reports of AI answers</td>
 <td>To check AI answers that people flag as wrong, harmful or offensive, and to make Kindred’s AI answers better.</td>
+</tr>
+<tr>
+<td>Phone notification tokens</td>
+<td>To tell you on your phone when someone else adds a report or a reading for a person you look after.</td>
 </tr>
 <tr>
 <td>Operational logs</td>
@@ -326,6 +337,10 @@
 <td>While your account exists, and 3 years after it is erased, as the record of your consent. They hold no name or email address.</td>
 </tr>
 <tr>
+<td>Push token for your phone</td>
+<td>Until you sign out on that phone, Google tells us the token no longer works (for example, the app was removed), or you delete your account.</td>
+</tr>
+<tr>
 <td>Server logs (incl. IP address)</td>
 <td>90 days, then deleted. Retained for security and debugging.</td>
 </tr>
@@ -344,6 +359,7 @@
 <p>We share your data with a small number of service providers (called <strong>Data Processors</strong> under DPDPA), strictly to operate the service:</p>
 <ul>
 <li><strong>Google LLC</strong> — for Google Sign-In, when you choose to sign in with Google. Google’s own privacy notice applies to that step.</li>
+<li><strong>Google LLC (Firebase Cloud Messaging)</strong> — to deliver notifications to the Kindred app on your phone. Google receives your phone’s push token and a message that holds only the kind of item and numbers that identify it (for example “reading 123, person 45”). Never names, values or report content: your phone gets those from Kindred directly.</li>
 <li><strong>Oracle Cloud Infrastructure (India)</strong> — for hosting the backend service and the database, in their Mumbai region.</li>
 <li><strong>Amazon Web Services India</strong> — for hosting uploaded record files in their Mumbai region, once files move to S3 (see <a href="#storage-location">Where your data is stored</a>).</li>
 <li><strong>OpenRouter, Inc. and the AI model provider it routes to</strong> — to read reports (see <a href="#ai">AI reading of reports</a>). They receive report text with names, phone numbers, email addresses and ID numbers removed, plus the patient’s age and sex. For photos and scanned PDFs, they receive the image itself, which can show personal details printed on it. Our production setting sends reports only to providers that promise not to keep or train on them. The same providers answer questions you ask Kindred and write visit-brief summaries (see <a href="#ask">Asking Kindred and visit briefs</a>).</li>
@@ -478,7 +494,6 @@
 <p>These are honest gaps that will be filled when the corresponding feature lands. Don’t try to address them in this version — they don’t exist yet.</p>
 <ul>
 <li><strong>AI processing description</strong> — added in v0.4 (§12). Fresh consent is gating item 8.</li>
-<li><strong>Push-notification content</strong> — added when FCM-based push (V1.5 vitals push, share-sent push) ships. Content of pushes will be enumerated explicitly so caregivers know what shows on a lock screen before they install.</li>
 <li><strong>Doctor-side data flow</strong> — added if/when a doctor surface ships, with the receiving-doctor’s data fiduciary status clarified.</li>
 <li><strong>Cross-border transfers</strong> — v0.4 names the three kinds of processing outside India (§5). A formal transfer section is needed before the notice reaches users outside the testing group.</li>
 <li><strong>Significant Data Fiduciary (SDF) obligations</strong> — DPDPA may classify Kindred as an SDF based on volume / sensitivity once external usage scales. If/when designated, add: DPO contact, periodic DPIA cadence, independent audit cadence.</li>
@@ -501,7 +516,8 @@
 <li>v0.6 → v0.7 <em>(2026-09-30, applied)</em>: “Report this answer” on AI output (Google Play AI-generated content policy): what a report keeps and for how long (In short, §2, §3, §6, #ask).</li>
 <li>v0.7 → v0.8 <em>(2026-09-30, applied)</em>: consent screen with an explicit “I agree” and a separate AI choice that is off unless ticked (§2, §4, §6, §12, #ask, §13); consent records and their retention; launch gates 6 and 8 done.</li>
 <li>v0.8 → v0.9 <em>(2026-09-30, applied)</em>: database encryption (SQLCipher, AES-256) is live; backups use a separate key; testing-stage backups stay on the server for up to 14 days (§5).</li>
-<li>v0.9 → v1.0: when this notice ships in-app and on the public web to external users for the first time, on the day of the first AAB upload to Internal Testing.</li>
+<li>v0.9 → v0.10 <em>(2026-10-01, applied)</em>: phone notifications (In short, §2, §3, §6, §7): push tokens, Google Firebase Cloud Messaging as a processor that sees ids only, what a notification shows, lock-screen behaviour, retention.</li>
+<li>v0.10 → v1.0: when this notice ships in-app and on the public web to external users for the first time, on the day of the first AAB upload to Internal Testing.</li>
 <li>v1.0 → v1.1, v1.2 …: any further changes; communicated via email + in-app prompt.</li>
 </ul>
 
