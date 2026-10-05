@@ -1,6 +1,6 @@
 # Kindred — Privacy Notice
 
-**Status:** v0.12 · _Testing stage: Kindred is used by the founder's family and invited testers only._ **Last updated:** 2026-10-05
+**Status:** v0.13 · _Testing stage: Kindred is used by the founder's family and invited testers only._ **Last updated:** 2026-10-05
 
 * * *
 
@@ -8,7 +8,7 @@
 
 -   **Kindred is a personal health-records vault for caregivers.** You upload records (lab reports, prescriptions, doctor notes, etc.) for the people you care for, and log day-to-day vital readings (BP, blood sugar) for them.
 -   **Your data is stored in India** (Mumbai), on Oracle Cloud.
--   **AI reads your reports** to explain them. Before a report goes to the AI, we remove names, phone numbers, email addresses and ID numbers from its text. The AI provider's servers may be outside India. See [AI reading of reports](#ai).
+-   **AI reads your reports** to explain them. It is on when you start; you can turn it off at any time in Profile. Before a report goes to the AI, we remove names, phone numbers, email addresses and ID numbers from its text. The AI provider's servers may be outside India. See [AI reading of reports](#ai).
 -   **You can ask Kindred questions about your family's records**, and make a one-page brief for a doctor visit. The AI sees relations ("your mother"), never names, and we do not save your questions (unless you report an answer as wrong or harmful). See [Asking Kindred and visit briefs](#ask).
 -   **You can send reports on WhatsApp.** Our WhatsApp replies never contain your test values; those stay behind your Kindred sign-in. See [Using Kindred on WhatsApp](#whatsapp).
 -   **Phone notifications.** When someone else in your family adds a report or a reading, the Kindred app can tell you. Google delivers only a signal with numbers that identify the item, never names or health values. Your phone then gets the text from Kindred over your signed-in connection. See [Who we share it with](#sharing).
@@ -113,7 +113,7 @@ We do not use any of this data for advertising, marketing profiling, or sale to 
 
 ## 4. Legal basis for processing {#legal-basis}
 
-We process your personal data on the basis of your **consent** (DPDPA Section 6). The first time you use Kindred — and again whenever what you agree to changes — you tick **"I have read the Privacy Notice and I agree to it"** and tap **I agree**. Nothing is pre-ticked, and Kindred stores or files nothing for you until you do. AI reading is a separate choice on the same screen, off unless you tick it (see [AI reading of reports](#ai)); you can change it at any time in Profile. Records you add for the people you care for are added by you, as their caregiver, on their behalf. Operational logs and app error reports are processed on the basis of legitimate uses (security and service operation) under DPDPA Section 7.
+We process your personal data on the basis of your **consent** (DPDPA Section 6). When you sign in for the first time, the line right under the **Continue with Google** button says that continuing means you agree to this notice and that AI explains your reports, with a link to this notice; tapping the button is your agreement. Nothing is pre-ticked, and Kindred stores or files nothing for you before that. AI reading is on for a new account, and you can turn it off at any time in Profile (see [AI reading of reports](#ai)). Whenever what you agree to changes, Kindred shows you once that the notice was updated, and you tap **Agree and continue**; your AI choice stays as it was. Records you add for the people you care for are added by you, as their caregiver, on their behalf. Operational logs and app error reports are processed on the basis of legitimate uses (security and service operation) under DPDPA Section 7.
 
 You can withdraw consent at any time — see [Your rights](#your-rights). Withdrawal applies going forward and does not affect processing that has already happened.
 
@@ -229,7 +229,7 @@ When a report is uploaded (on the web or on WhatsApp), Kindred asks an AI model 
 -   **Where it runs.** On the servers of the AI provider that OpenRouter routes to, which may be outside India.
 -   **What it returns.** A short summary, the test results as printed, flags that need attention, and questions to ask the doctor. We check every value against the report text before we store it.
 -   **What it does not do.** It does not diagnose, and it does not advise starting or stopping any medicine. Check anything worrying with a doctor.
--   **Choice.** AI reading is off unless you turn it on — on the consent screen when you start, or later in Profile. While it is off, reports you add are stored and shown but not read, and nothing goes to the AI. Turning it off stops new readings; readings already made stay with their reports until you delete them.
+-   **Choice.** AI reading is on for a new account (the sign-in screen says so), and you can turn it off at any time in Profile. If you made a choice before 5 October 2026, it stays as you set it. While it is off, reports you add are stored and shown but not read, and nothing goes to the AI. Turning it off stops new readings; readings already made stay with their reports until you delete them.
 
 ### Asking Kindred and visit briefs {#ask}
 
@@ -302,7 +302,7 @@ The notice makes promises Kindred has to actually keep. Block Internal Testing p
 3.  **Per-record deletion erases all S3 versions, not just adds a delete-marker.** (Tracker: Phase 1.5 record-deletion + delete-version row.)
 4.  **The in-app privacy notice screen is wired** — first-launch overlay + permanent link from Profile screen. (Tracker: Phase 0.5 r93 in-app privacy screen row.)
 5.  **The web-based account deletion mechanism is live** — _done 2026-09-30:_ Profile → Delete my account on the web app (§9). Required by Google Play Policy for any app with account creation, and required for the §9 promise to be honest. (Tracker: Phase 0.5 R236 web-based deletion row.)
-6.  **Consent is captured affirmatively** — a tap on a clearly-labelled “I agree” control, not a pre-ticked checkbox or implicit consent from continuing to use the app. (DPDPA Section 6.) _Done 2026-09-30:_ consent screen in the app and web app (unticked "I agree"), stored per version; the API refuses everything else until then.
+6.  **Consent is captured affirmatively** — a tap on a clearly-labelled control with the agreement stated next to it, not a pre-ticked checkbox or implicit consent from continuing to use the app. (DPDPA Section 6.) _Done 2026-09-30:_ consent screen in the app and web app (unticked "I agree"), stored per version; the API refuses everything else until then. _Changed 2026-10-05 (v0.13):_ the agreement line sits under every **Continue with Google** button and the tap is recorded as consent (version, AI choice, source); updates use a one-tap **Agree and continue** screen.
 7.  **Patient-controlled creator-revocation is implemented** for Scenario A (when a patient self-claims their record). The §7 promise that “if you are the patient yourself, you can revoke any caregiver — including the person who originally added you — without their cooperation” is currently true for non-creator caregivers but needs to extend to the creator when Scenario A ships. (Tracker: Phase 1 R234 patient-controlled creator-revocation row.)
 8.  **Consent for AI reading and for WhatsApp is captured** before any person outside the testing group uses Kindred (§12). Until then, AI reading is on for all testers. (Added in v0.4.) _Done 2026-09-30:_ AI reading is a separate unticked choice, enforced by the server for report reading, Ask and briefs; WhatsApp files nothing before consent.
 9.  **Photos and scans are redacted before AI reading**, or the notice keeps saying they are sent as images (§12). OCR with in-code redaction is planned. (Added in v0.4.)
@@ -340,5 +340,6 @@ To keep the notice honest and avoid commitments Kindred can’t yet keep:
 -   v0.9 → v0.10 _(2026-10-01, applied)_: phone notifications (In short, §2, §3, §6, §7): push tokens, Google Firebase Cloud Messaging as a processor that sees ids only, what a notification shows, lock-screen behaviour, retention.
 -   v0.10 → v0.11 _(2026-10-05, applied)_: app error reports (§2 Operational logs, §3, §4, §6): what a report holds, what it never holds, scrubbing, 30-day retention, legitimate-use basis.
 -   v0.11 → v0.12 _(2026-10-05, applied)_: invites name the invited email address, and a masked form is shown to someone who opens the link with another account (§7); a join link's one-time code passes through Google Play when the app is installed from it (§7).
--   v0.12 → v1.0: when this notice ships in-app and on the public web to external users for the first time, on the day of the first AAB upload to Internal Testing.
+-   v0.12 → v0.13 _(2026-10-05, applied)_: signing in with Google is the agreement, stated under the button (§4, launch gate 6); AI reading is on for new accounts and can be turned off in Profile, earlier choices stay (§12); updates are agreed with one tap.
+-   v0.13 → v1.0: when this notice ships in-app and on the public web to external users for the first time, on the day of the first AAB upload to Internal Testing.
 -   v1.0 → v1.1, v1.2 …: any further changes; communicated via email + in-app prompt.
