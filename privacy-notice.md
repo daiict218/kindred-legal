@@ -1,6 +1,6 @@
 # Kindred — Privacy Notice
 
-**Status:** v0.10 · _Testing stage: Kindred is used by the founder's family and invited testers only._ **Last updated:** 2026-10-01
+**Status:** v0.11 · _Testing stage: Kindred is used by the founder's family and invited testers only._ **Last updated:** 2026-10-05
 
 * * *
 
@@ -86,6 +86,7 @@ We only collect data we actually need to run the app. Today, that means:
 
 -   Server logs that record requests to our backend (timestamp, request path, response code, IP address). These exist for security, debugging, and abuse prevention.
 -   Sign-in events (timestamp, device type, IP address).
+-   App error reports: when something fails in the Kindred app (sign-in, a request to our server, an upload, or the app closing because of an error), the app sends us what failed. A report holds the kind of error, its code and a short error message, the screen or the server address it happened on (with the numbers that identify a person or a report removed), the time, the app version, your phone's make and model, and its Android version. If you are signed in, we also keep which account it came from. A report never holds health data, file names or sign-in tokens; before we store it, we remove anything in the message that looks like an email address, a phone number or a token.
 
 **What we do not collect today**
 
@@ -106,12 +107,13 @@ We only collect data we actually need to run the app. Today, that means:
 | Reports of AI answers | To check AI answers that people flag as wrong, harmful or offensive, and to make Kindred's AI answers better. |
 | Phone notification tokens | To tell you on your phone when someone else adds a report or a reading for a person you look after. |
 | Operational logs | To keep the service secure, diagnose problems, and detect abuse. |
+| App error reports | To find and fix what goes wrong in the Kindred app, for example why a sign-in failed on a certain phone. |
 
 We do not use any of this data for advertising, marketing profiling, or sale to third parties.
 
 ## 4. Legal basis for processing {#legal-basis}
 
-We process your personal data on the basis of your **consent** (DPDPA Section 6). The first time you use Kindred — and again whenever what you agree to changes — you tick **"I have read the Privacy Notice and I agree to it"** and tap **I agree**. Nothing is pre-ticked, and Kindred stores or files nothing for you until you do. AI reading is a separate choice on the same screen, off unless you tick it (see [AI reading of reports](#ai)); you can change it at any time in Profile. Records you add for the people you care for are added by you, as their caregiver, on their behalf. Operational logs are processed on the basis of legitimate uses (security and service operation) under DPDPA Section 7.
+We process your personal data on the basis of your **consent** (DPDPA Section 6). The first time you use Kindred — and again whenever what you agree to changes — you tick **"I have read the Privacy Notice and I agree to it"** and tap **I agree**. Nothing is pre-ticked, and Kindred stores or files nothing for you until you do. AI reading is a separate choice on the same screen, off unless you tick it (see [AI reading of reports](#ai)); you can change it at any time in Profile. Records you add for the people you care for are added by you, as their caregiver, on their behalf. Operational logs and app error reports are processed on the basis of legitimate uses (security and service operation) under DPDPA Section 7.
 
 You can withdraw consent at any time — see [Your rights](#your-rights). Withdrawal applies going forward and does not affect processing that has already happened.
 
@@ -142,6 +144,7 @@ You can withdraw consent at any time — see [Your rights](#your-rights). Withdr
 | Your consent choices (which version of this notice, AI reading yes or no, when) | While your account exists, and 3 years after it is erased, as the record of your consent. They hold no name or email address. |
 | Push token for your phone | Until you sign out on that phone, Google tells us the token no longer works (for example, the app was removed), or you delete your account. |
 | Server logs (incl. IP address) | 90 days, then deleted. Retained for security and debugging. |
+| App error reports | 30 days, then deleted. Also deleted with your account. |
 | Sign-in audit logs | 90 days, then deleted. |
 | Operational backups | Up to 30 days on a rolling window. Deletion requests propagate to backups within 35 days of the request. |
 
@@ -334,5 +337,6 @@ To keep the notice honest and avoid commitments Kindred can’t yet keep:
 -   v0.7 → v0.8 _(2026-09-30, applied)_: consent screen with an explicit "I agree" and a separate AI choice that is off unless ticked (§2, §4, §6, §12, #ask, §13); consent records and their retention; launch gates 6 and 8 done.
 -   v0.8 → v0.9 _(2026-09-30, applied)_: database encryption (SQLCipher, AES-256) is live; backups use a separate key; testing-stage backups stay on the server for up to 14 days (§5).
 -   v0.9 → v0.10 _(2026-10-01, applied)_: phone notifications (In short, §2, §3, §6, §7): push tokens, Google Firebase Cloud Messaging as a processor that sees ids only, what a notification shows, lock-screen behaviour, retention.
--   v0.10 → v1.0: when this notice ships in-app and on the public web to external users for the first time, on the day of the first AAB upload to Internal Testing.
+-   v0.10 → v0.11 _(2026-10-05, applied)_: app error reports (§2 Operational logs, §3, §4, §6): what a report holds, what it never holds, scrubbing, 30-day retention, legitimate-use basis.
+-   v0.11 → v1.0: when this notice ships in-app and on the public web to external users for the first time, on the day of the first AAB upload to Internal Testing.
 -   v1.0 → v1.1, v1.2 …: any further changes; communicated via email + in-app prompt.

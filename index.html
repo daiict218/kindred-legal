@@ -133,7 +133,7 @@
 <body>
   <div class="content">
 <h1 id="kindred-privacy-notice" tabindex="-1">Kindred — Privacy Notice</h1>
-<p><strong>Status:</strong> v0.10 · <em>Testing stage: Kindred is used by the founder’s family and invited testers only.</em> <strong>Last updated:</strong> 2026-10-01</p>
+<p><strong>Status:</strong> v0.11 · <em>Testing stage: Kindred is used by the founder’s family and invited testers only.</em> <strong>Last updated:</strong> 2026-10-05</p>
 <hr>
 <h2 id="in-short-the-30-second-version" tabindex="-1">In short — the 30-second version</h2>
 <ul>
@@ -209,6 +209,7 @@
 <ul>
 <li>Server logs that record requests to our backend (timestamp, request path, response code, IP address). These exist for security, debugging, and abuse prevention.</li>
 <li>Sign-in events (timestamp, device type, IP address).</li>
+<li>App error reports: when something fails in the Kindred app (sign-in, a request to our server, an upload, or the app closing because of an error), the app sends us what failed. A report holds the kind of error, its code and a short error message, the screen or the server address it happened on (with the numbers that identify a person or a report removed), the time, the app version, your phone’s make and model, and its Android version. If you are signed in, we also keep which account it came from. A report never holds health data, file names or sign-in tokens; before we store it, we remove anything in the message that looks like an email address, a phone number or a token.</li>
 </ul>
 <p><strong>What we do not collect today</strong></p>
 <ul>
@@ -264,11 +265,15 @@
 <td>Operational logs</td>
 <td>To keep the service secure, diagnose problems, and detect abuse.</td>
 </tr>
+<tr>
+<td>App error reports</td>
+<td>To find and fix what goes wrong in the Kindred app, for example why a sign-in failed on a certain phone.</td>
+</tr>
 </tbody>
 </table>
 <p>We do not use any of this data for advertising, marketing profiling, or sale to third parties.</p>
 <h2 id="legal-basis" tabindex="-1">4. Legal basis for processing</h2>
-<p>We process your personal data on the basis of your <strong>consent</strong> (DPDPA Section 6). The first time you use Kindred — and again whenever what you agree to changes — you tick <strong>“I have read the Privacy Notice and I agree to it”</strong> and tap <strong>I agree</strong>. Nothing is pre-ticked, and Kindred stores or files nothing for you until you do. AI reading is a separate choice on the same screen, off unless you tick it (see <a href="#ai">AI reading of reports</a>); you can change it at any time in Profile. Records you add for the people you care for are added by you, as their caregiver, on their behalf. Operational logs are processed on the basis of legitimate uses (security and service operation) under DPDPA Section 7.</p>
+<p>We process your personal data on the basis of your <strong>consent</strong> (DPDPA Section 6). The first time you use Kindred — and again whenever what you agree to changes — you tick <strong>“I have read the Privacy Notice and I agree to it”</strong> and tap <strong>I agree</strong>. Nothing is pre-ticked, and Kindred stores or files nothing for you until you do. AI reading is a separate choice on the same screen, off unless you tick it (see <a href="#ai">AI reading of reports</a>); you can change it at any time in Profile. Records you add for the people you care for are added by you, as their caregiver, on their behalf. Operational logs and app error reports are processed on the basis of legitimate uses (security and service operation) under DPDPA Section 7.</p>
 <p>You can withdraw consent at any time — see <a href="#your-rights">Your rights</a>. Withdrawal applies going forward and does not affect processing that has already happened.</p>
 <h2 id="storage-location" tabindex="-1">5. Where your data is stored</h2>
 <ul>
@@ -343,6 +348,10 @@
 <tr>
 <td>Server logs (incl. IP address)</td>
 <td>90 days, then deleted. Retained for security and debugging.</td>
+</tr>
+<tr>
+<td>App error reports</td>
+<td>30 days, then deleted. Also deleted with your account.</td>
 </tr>
 <tr>
 <td>Sign-in audit logs</td>
@@ -517,7 +526,8 @@
 <li>v0.7 → v0.8 <em>(2026-09-30, applied)</em>: consent screen with an explicit “I agree” and a separate AI choice that is off unless ticked (§2, §4, §6, §12, #ask, §13); consent records and their retention; launch gates 6 and 8 done.</li>
 <li>v0.8 → v0.9 <em>(2026-09-30, applied)</em>: database encryption (SQLCipher, AES-256) is live; backups use a separate key; testing-stage backups stay on the server for up to 14 days (§5).</li>
 <li>v0.9 → v0.10 <em>(2026-10-01, applied)</em>: phone notifications (In short, §2, §3, §6, §7): push tokens, Google Firebase Cloud Messaging as a processor that sees ids only, what a notification shows, lock-screen behaviour, retention.</li>
-<li>v0.10 → v1.0: when this notice ships in-app and on the public web to external users for the first time, on the day of the first AAB upload to Internal Testing.</li>
+<li>v0.10 → v0.11 <em>(2026-10-05, applied)</em>: app error reports (§2 Operational logs, §3, §4, §6): what a report holds, what it never holds, scrubbing, 30-day retention, legitimate-use basis.</li>
+<li>v0.11 → v1.0: when this notice ships in-app and on the public web to external users for the first time, on the day of the first AAB upload to Internal Testing.</li>
 <li>v1.0 → v1.1, v1.2 …: any further changes; communicated via email + in-app prompt.</li>
 </ul>
 
