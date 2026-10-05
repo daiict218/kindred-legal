@@ -1,6 +1,6 @@
 # Kindred — Privacy Notice
 
-**Status:** v0.11 · _Testing stage: Kindred is used by the founder's family and invited testers only._ **Last updated:** 2026-10-05
+**Status:** v0.12 · _Testing stage: Kindred is used by the founder's family and invited testers only._ **Last updated:** 2026-10-05
 
 * * *
 
@@ -155,6 +155,7 @@ If a deletion request reaches us via email, we treat it as a formal **right-to-e
 We share your data with a small number of service providers (called **Data Processors** under DPDPA), strictly to operate the service:
 
 -   **Google LLC** — for Google Sign-In, when you choose to sign in with Google. Google’s own privacy notice applies to that step.
+-   **Google LLC (Google Play)** — when someone opens a join link on an Android phone without the Kindred app, the link can send them to Google Play to install it. The link's one-time code goes to Google Play with it, and Google Play gives the code only to the Kindred app after installation, so the app opens the invite. Google sees the code, not who it is for. The code still works only once, for 7 days.
 -   **Google LLC (Firebase Cloud Messaging)** — to deliver notifications to the Kindred app on your phone. Google receives your phone's push token and a message that holds only the kind of item and numbers that identify it (for example "reading 123, person 45"). Never names, values or report content: your phone gets those from Kindred directly.
 -   **Oracle Cloud Infrastructure (India)** — for hosting the backend service and the database, in their Mumbai region.
 -   **Amazon Web Services India** — for hosting uploaded record files in their Mumbai region, once files move to S3 (see [Where your data is stored](#storage-location)).
@@ -168,7 +169,7 @@ We also share data with **other caregivers you choose to invite**:
 -   A share is identified by the recipient’s email address. The recipient must sign in to Kindred with that exact email (via Google Sign-In) before access takes effect. If the share is not claimed within 30 days, it expires automatically.
 -   **You can remove an invited caregiver at any time**, including a caregiver who originally invited others. If you are the patient yourself (i.e., you have signed up and claimed your own record), you can revoke any caregiver — including the person who originally added you — without their cooperation. This is a deliberate property: control over who can see your records belongs to you.
 -   Removing a caregiver ends their access to that patient’s records and vitals going forward. Records and readings they entered while they had access remain in the patient’s record set.
--   **Invites and shares on WhatsApp.** You can also invite someone, or share a report with them, through a message that opens in **your own** WhatsApp. Kindred never messages people who have not written to it first. The message holds a one-time link that works for 7 days. The person joins only after signing in with Google and choosing their relation to the patient. The shared message holds the report's title, date, a summary without numbers, and the names of flagged results — never test values.
+-   **Invites and shares on WhatsApp.** You can also invite someone, or share a report with them, through a message that opens in **your own** WhatsApp. Kindred never messages people who have not written to it first. The message holds a one-time link that works for 7 days. An invite message also names the email address you invited, so the person signs in with the right Google account. The person joins only after signing in with Google and choosing their relation to the patient. If they sign in with a different account, Kindred shows them the invited address hidden in part (for example "v••••@gmail.com") and asks which account to use. The shared message holds the report's title, date, a summary without numbers, and the names of flagged results — never test values.
 -   Sharing is per-patient. Inviting someone to see records for one parent does not give them access to records for any other patient.
 
 We do **not** share your data with:
@@ -338,5 +339,6 @@ To keep the notice honest and avoid commitments Kindred can’t yet keep:
 -   v0.8 → v0.9 _(2026-09-30, applied)_: database encryption (SQLCipher, AES-256) is live; backups use a separate key; testing-stage backups stay on the server for up to 14 days (§5).
 -   v0.9 → v0.10 _(2026-10-01, applied)_: phone notifications (In short, §2, §3, §6, §7): push tokens, Google Firebase Cloud Messaging as a processor that sees ids only, what a notification shows, lock-screen behaviour, retention.
 -   v0.10 → v0.11 _(2026-10-05, applied)_: app error reports (§2 Operational logs, §3, §4, §6): what a report holds, what it never holds, scrubbing, 30-day retention, legitimate-use basis.
--   v0.11 → v1.0: when this notice ships in-app and on the public web to external users for the first time, on the day of the first AAB upload to Internal Testing.
+-   v0.11 → v0.12 _(2026-10-05, applied)_: invites name the invited email address, and a masked form is shown to someone who opens the link with another account (§7); a join link's one-time code passes through Google Play when the app is installed from it (§7).
+-   v0.12 → v1.0: when this notice ships in-app and on the public web to external users for the first time, on the day of the first AAB upload to Internal Testing.
 -   v1.0 → v1.1, v1.2 …: any further changes; communicated via email + in-app prompt.
