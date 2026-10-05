@@ -1,6 +1,6 @@
 # Kindred — Privacy Notice
 
-**Status:** v0.13 · _Testing stage: Kindred is used by the founder's family and invited testers only._ **Last updated:** 2026-10-05
+**Status:** v0.14 · _Testing stage: Kindred is used by the founder's family and invited testers only._ **Last updated:** 2026-10-05
 
 * * *
 
@@ -9,7 +9,7 @@
 -   **Kindred is a personal health-records vault for caregivers.** You upload records (lab reports, prescriptions, doctor notes, etc.) for the people you care for, and log day-to-day vital readings (BP, blood sugar) for them.
 -   **Your data is stored in India** (Mumbai), on Oracle Cloud.
 -   **AI reads your reports** to explain them. It is on when you start; you can turn it off at any time in Profile. Before a report goes to the AI, we remove names, phone numbers, email addresses and ID numbers from its text. The AI provider's servers may be outside India. See [AI reading of reports](#ai).
--   **You can ask Kindred questions about your family's records**, and make a one-page brief for a doctor visit. The AI sees relations ("your mother"), never names, and we do not save your questions (unless you report an answer as wrong or harmful). See [Asking Kindred and visit briefs](#ask).
+-   **You can ask Kindred questions about your family's records**, and make a one-page brief for a doctor visit. The AI sees relations ("your mother"), never names. We keep the chat for 30 days so Kindred remembers what you asked before; **Clear chat** deletes it at once. See [Asking Kindred and visit briefs](#ask).
 -   **You can send reports on WhatsApp.** Our WhatsApp replies never contain your test values; those stay behind your Kindred sign-in. See [Using Kindred on WhatsApp](#whatsapp).
 -   **Phone notifications.** When someone else in your family adds a report or a reading, the Kindred app can tell you. Google delivers only a signal with numbers that identify the item, never names or health values. Your phone then gets the text from Kindred over your signed-in connection. See [Who we share it with](#sharing).
 -   **We don’t sell your data, ever.** We don’t share it with advertisers, marketers, or insurers.
@@ -73,7 +73,7 @@ We only collect data we actually need to run the app. Today, that means:
 
 **Questions you ask Kindred**
 
--   We do **not** store your questions or Kindred's answers. The chat stays on your screen and is gone when you close the page. We log only that a question was asked, how long the answer took, and which reports it cited.
+-   Your chat with Kindred: each question as you typed it, Kindred's answer and the reports it cited, and the AI's working copy of that turn (the question with names replaced by relation labels, and what it looked up in your records). We keep it so a follow-up question ("and her sugar?") has context. Our logs record only that a question was asked, how long the answer took, and which reports it cited, never the question or the answer.
 -   If you tap **Report this answer** under an AI answer or a report's reading, we keep your report: the reason you chose, your note if you wrote one, and — for an Ask answer or a visit-brief summary — the text of that answer. For a report's reading we keep only which report it was, because the reading is already stored.
 
 **Phone notifications** (Kindred Android app)
@@ -139,7 +139,7 @@ You can withdraw consent at any time — see [Your rights](#your-rights). Withdr
 | WhatsApp message log (type, time, outcome; no text) | 30 days, then deleted. |
 | A WhatsApp file waiting for you to say whose report it is | 24 hours, then deleted if you don't choose. |
 | One-time join links | Until used, or 7 days, whichever comes first. The record of who created and used it stays with the caregiver audit trail. |
-| Questions you ask Kindred, and the answers | Not stored, unless you report an answer (next row). |
+| Your chat with Kindred (questions, answers, the AI's working copy) | 30 days from each message, then deleted. Deleted at once when you tap **Clear chat** or delete your account, and when a person or report it used is deleted. Hidden while you can no longer see a person it used, or they turned AI reading off. |
 | AI answers you report (your reason, your note, and the answer's text) | 90 days, then deleted. Also deleted with the report it is about, or with your account. |
 | Your consent choices (which version of this notice, AI reading yes or no, when) | While your account exists, and 3 years after it is erased, as the record of your consent. They hold no name or email address. |
 | Push token for your phone | Until you sign out on that phone, Google tells us the token no longer works (for example, the app was removed), or you delete your account. |
@@ -233,9 +233,9 @@ When a report is uploaded (on the web or on WhatsApp), Kindred asks an AI model 
 
 ### Asking Kindred and visit briefs {#ask}
 
--   **Asking.** On the **Ask** page you can ask about any report, test or home log of the people you care for. An AI model answers by looking up your family's records through Kindred, one piece at a time: the list of people (by relation, age and sex), test results and trends, report summaries and findings, prescriptions and home readings. It can see only the people you are a caregiver of.
+-   **Asking.** In the **Ask Kindred** chat (the green chat button in the app, the Ask page on the web) you can ask about any report, test or home log of the people you care for. An AI model answers by looking up your family's records through Kindred, one piece at a time: the list of people (by relation, age and sex), test results and trends, report summaries and findings, prescriptions and home readings. It can see only the people you are a caregiver of.
 -   **What the AI receives.** Your question, with every name we hold for your family replaced by a relation label (for example "[Mother]") and phone numbers, email addresses and IDs removed. If a name is still found after that step, the question is not sent. The records it looks up carry no names, file names, doctor names or your notes.
--   **What we keep.** Nothing: questions and answers are not saved, on our servers or in your browser. The one exception is an answer you choose to report with **Report this answer**: we keep it for 90 days to check it (see [How long we keep your data](#retention)).
+-   **What we keep.** The chat, for 30 days, on our server (encrypted, like your records), so that Kindred remembers the conversation: a follow-up is sent to the AI together with your earlier questions and its earlier answers, still without names. Nothing is saved on your phone or in your browser. **Clear chat** (⋮ in the app, the button on the web) deletes it at once. An answer you report with **Report this answer** is kept for 90 days to check it. See [How long we keep your data](#retention).
 -   **Visit brief.** The brief's numbers come straight from your records and home logs, not from the AI. Only its short summary and the suggested questions for the doctor are written by the AI, in the same way as an answer on the Ask page.
 -   **Where it runs, and choice.** The same as report reading above: an AI provider that may be outside India, and only if you turned AI reading on. With it off, the Ask page and the brief's summary say so instead of asking the AI; the rest of the brief still shows.
 
@@ -341,5 +341,6 @@ To keep the notice honest and avoid commitments Kindred can’t yet keep:
 -   v0.10 → v0.11 _(2026-10-05, applied)_: app error reports (§2 Operational logs, §3, §4, §6): what a report holds, what it never holds, scrubbing, 30-day retention, legitimate-use basis.
 -   v0.11 → v0.12 _(2026-10-05, applied)_: invites name the invited email address, and a masked form is shown to someone who opens the link with another account (§7); a join link's one-time code passes through Google Play when the app is installed from it (§7).
 -   v0.12 → v0.13 _(2026-10-05, applied)_: signing in with Google is the agreement, stated under the button (§4, launch gate 6); AI reading is on for new accounts and can be turned off in Profile, earlier choices stay (§12); updates are agreed with one tap.
--   v0.13 → v1.0: when this notice ships in-app and on the public web to external users for the first time, on the day of the first AAB upload to Internal Testing.
+-   v0.13 → v0.14 _(2026-10-05, applied)_: the Ask Kindred chat is kept 30 days so follow-up questions have context; Clear chat, account deletion and deleting a person or report delete it (In short, §2, §6, #ask).
+-   v0.14 → v1.0: when this notice ships in-app and on the public web to external users for the first time, on the day of the first AAB upload to Internal Testing.
 -   v1.0 → v1.1, v1.2 …: any further changes; communicated via email + in-app prompt.
