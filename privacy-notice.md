@@ -11,7 +11,7 @@
 -   **AI reads your reports** to explain them. It is on when you start; you can turn it off at any time in Profile. Before a report goes to the AI, we remove names, phone numbers, email addresses and ID numbers from its text. The AI provider's servers may be outside India. See [AI reading of reports](#ai).
 -   **You can ask Kindred questions about your family's records**, and make a one-page brief for a doctor visit. The AI sees relations ("your mother"), never names. We keep the chat for 30 days so Kindred remembers what you asked before; **Clear chat** deletes it at once. See [Asking Kindred and visit briefs](#ask).
 -   **You can send reports on WhatsApp.** Our WhatsApp replies never contain your test values; those stay behind your Kindred sign-in. See [Using Kindred on WhatsApp](#whatsapp).
--   **Phone notifications.** When someone else in your family adds a report or a reading, the Kindred app can tell you. Google delivers only a signal with numbers that identify the item, never names or health values. Your phone then gets the text from Kindred over your signed-in connection. See [Who we share it with](#sharing).
+-   **Phone notifications.** When someone else in your family adds a report or a reading, and when a home check (BP, sugar, medicine) set up for a person you look after is due, the Kindred app can tell you. Google delivers only a signal with numbers that identify the item, never names or health values. Your phone then gets the text from Kindred over your signed-in connection. See [Who we share it with](#sharing).
 -   **We don’t sell your data, ever.** We don’t share it with advertisers, marketers, or insurers.
 -   **You can delete your account and your records at any time.** Deleting hides the item at once. For 24 hours you (or anyone who looks after that person) can undo it, in case of a mistake. Then the files and data are erased for good — not just hidden.
 -   **One person to write to:** `ajaygaur319@gmail.com`. We respond to grievance and rights requests within 30 days.
@@ -79,7 +79,8 @@ We only collect data we actually need to run the app. Today, that means:
 **Phone notifications** (Kindred Android app)
 
 -   A push token for each phone where you are signed in to the Kindred app: a random code from Google's Firebase Cloud Messaging that lets us send a notification to that phone. We keep which account it belongs to, the platform (Android) and when it was last used.
--   We do **not** store the notifications. Each one is made when your phone asks for it, in your language, after we check that you still look after that person. It shows the person's first name and what was added, for example "Papa · BP 150/92 · added by Riya", or a report's title and the names of results that need attention.
+-   We do **not** store the notifications. Each one is made when your phone asks for it, in your language, after we check that you still look after that person. It shows the person's first name and what was added, for example "Papa · BP 150/92 · added by Riya", or a report's title and the names of results that need attention. A reminder shows the person's first name and the check, for example "Papa · time for Morning BP"; every caregiver of that person gets it. A reading within its limits comes without sound.
+-   To send each reminder once, we note which check was reminded on which day (ids and the date only) and delete that note after 7 days.
 -   On a locked phone the notification hides its text, unless your phone is set to show all notification content on the lock screen. You can turn Kindred's notifications off in your phone's settings at any time.
 
 **Operational logs**
@@ -105,7 +106,7 @@ We only collect data we actually need to run the app. Today, that means:
 | AI readings | To explain a report in plain words, flag results that need attention, and show trends across reports. |
 | Questions you ask, visit briefs | To answer questions about your family's records and prepare a one-page brief for a doctor visit. |
 | Reports of AI answers | To check AI answers that people flag as wrong, harmful or offensive, and to make Kindred's AI answers better. |
-| Phone notification tokens | To tell you on your phone when someone else adds a report or a reading for a person you look after. |
+| Phone notification tokens | To tell you on your phone when someone else adds a report or a reading for a person you look after, and when a home check for them is due. |
 | Operational logs | To keep the service secure, diagnose problems, and detect abuse. |
 | App error reports | To find and fix what goes wrong in the Kindred app, for example why a sign-in failed on a certain phone. |
 
@@ -342,5 +343,6 @@ To keep the notice honest and avoid commitments Kindred can’t yet keep:
 -   v0.11 → v0.12 _(2026-10-05, applied)_: invites name the invited email address, and a masked form is shown to someone who opens the link with another account (§7); a join link's one-time code passes through Google Play when the app is installed from it (§7).
 -   v0.12 → v0.13 _(2026-10-05, applied)_: signing in with Google is the agreement, stated under the button (§4, launch gate 6); AI reading is on for new accounts and can be turned off in Profile, earlier choices stay (§12); updates are agreed with one tap.
 -   v0.13 → v0.14 _(2026-10-05, applied)_: the Ask Kindred chat is kept 30 days so follow-up questions have context; Clear chat, account deletion and deleting a person or report delete it (In short, §2, §6, #ask).
+-   v0.14, edit _(2026-10-05)_: phone notifications also remind every caregiver when a home check is due; readings within limits come without sound; the 7-day reminder note (In short, §2, §3). No new data, purpose of a new kind or processor, so nobody is asked to agree again.
 -   v0.14 → v1.0: when this notice ships in-app and on the public web to external users for the first time, on the day of the first AAB upload to Internal Testing.
 -   v1.0 → v1.1, v1.2 …: any further changes; communicated via email + in-app prompt.
