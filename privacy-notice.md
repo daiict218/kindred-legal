@@ -1,6 +1,6 @@
 # Kindred — Privacy Notice
 
-**Status:** v0.14 · _Testing stage: Kindred is used by the founder's family and invited testers only._ **Last updated:** 2026-10-05
+**Status:** v0.15 · _Testing stage: Kindred is used by the founder's family and invited testers only._ **Last updated:** 2026-10-07
 
 * * *
 
@@ -8,7 +8,7 @@
 
 -   **Kindred is a personal health-records vault for caregivers.** You upload records (lab reports, prescriptions, doctor notes, etc.) for the people you care for, and log day-to-day vital readings (BP, blood sugar) for them.
 -   **Your data is stored in India** (Mumbai), on Oracle Cloud.
--   **AI reads your reports** to explain them. It is on when you start; you can turn it off at any time in Profile. Before a report goes to the AI, we remove names, phone numbers, email addresses and ID numbers from its text. The AI provider's servers may be outside India. See [AI reading of reports](#ai).
+-   **AI explains your reports, only if you say yes.** Kindred asks you the first time you add a report (or connect WhatsApp); until you say yes, AI reading stays off. You can change your choice at any time in Profile. Before a report goes to the AI, we remove names, phone numbers, email addresses and ID numbers from its text; photos go as they are. The AI runs on Anthropic's Claude models through OpenRouter, whose servers may be outside India. See [AI reading of reports](#ai).
 -   **You can ask Kindred questions about your family's records**, and make a one-page brief for a doctor visit. The AI sees relations ("your mother"), never names. We keep the chat for 30 days so Kindred remembers what you asked before; **Clear chat** deletes it at once. See [Asking Kindred and visit briefs](#ask).
 -   **You can send reports on WhatsApp.** Our WhatsApp replies never contain your test values; those stay behind your Kindred sign-in. See [Using Kindred on WhatsApp](#whatsapp).
 -   **Phone notifications.** When someone else in your family adds a report or a reading, and when a home check (BP, sugar, medicine) set up for a person you look after is due, the Kindred app can tell you. Google delivers only a signal with numbers that identify the item, never names or health values. Your phone then gets the text from Kindred over your signed-in connection. See [Who we share it with](#sharing).
@@ -42,7 +42,7 @@ We only collect data we actually need to run the app. Today, that means:
 **Health-record data you upload**
 
 -   Files you upload as records — typically lab reports, prescriptions, doctor notes, discharge summaries, imaging reports, and similar documents. These often contain sensitive health information about the patient the record is for.
--   A name and date of birth for each patient you add (e.g., yourself, your parent).
+-   A name, date of birth and sex for each patient you add (e.g., yourself, your parent). Sex is filled in from the relation you pick ("mother" → female) and you can change it; reports use it to choose normal ranges.
 -   The relationship you have to that patient (e.g., self, father, mother).
 
 **Vital readings you log**
@@ -160,7 +160,7 @@ We share your data with a small number of service providers (called **Data Proce
 -   **Google LLC (Firebase Cloud Messaging)** — to deliver notifications to the Kindred app on your phone. Google receives your phone's push token and a message that holds only the kind of item and numbers that identify it (for example "reading 123, person 45"). Never names, values or report content: your phone gets those from Kindred directly.
 -   **Oracle Cloud Infrastructure (India)** — for hosting the backend service and the database, in their Mumbai region.
 -   **Amazon Web Services India** — for hosting uploaded record files in their Mumbai region, once files move to S3 (see [Where your data is stored](#storage-location)).
--   **OpenRouter, Inc. and the AI model provider it routes to** — to read reports (see [AI reading of reports](#ai)). They receive report text with names, phone numbers, email addresses and ID numbers removed, plus the patient's age and sex. For photos and scanned PDFs, they receive the image itself, which can show personal details printed on it. Our production setting sends reports only to providers that promise not to keep or train on them. The same providers answer questions you ask Kindred and write visit-brief summaries (see [Asking Kindred and visit briefs](#ask)).
+-   **OpenRouter, Inc. and the provider it routes to for Anthropic's Claude models (Anthropic, PBC, or a cloud provider that hosts Claude)** — only if you said yes to AI reading, to read reports (see [AI reading of reports](#ai)). They receive report text with names, phone numbers, email addresses and ID numbers removed, plus the patient's age and sex. For photos and scanned PDFs, they receive the image itself, which can show personal details printed on it. Our production setting sends reports only to providers that promise not to keep or train on them. The same providers answer questions you ask Kindred and write visit-brief summaries (see [Asking Kindred and visit briefs](#ask)).
 -   **TypeSafe (Jev)** — to match printed test names (e.g. "S. Creat") to standard tests. It receives test names and units only. During the testing stage, it also receives the first lines of a report sent on WhatsApp (which include the printed patient name, age and sex) to work out which family member the report is for.
 -   **Meta Platforms (WhatsApp Business Platform)** — if you use Kindred on WhatsApp. Messages and files you send to Kindred, and our replies, pass through Meta's servers, where WhatsApp's end-to-end encryption ends. Meta's own terms and privacy policy apply to WhatsApp.
 
@@ -224,13 +224,13 @@ If you are not satisfied with our response, you can complain to the **Data Prote
 
 ## 12. AI reading of reports {#ai}
 
-When a report is uploaded (on the web or on WhatsApp), Kindred asks an AI model to read it and explain it.
+When a report is uploaded (in the app, on the web or on WhatsApp) and you have said yes to AI reading, Kindred asks an AI model to read it and explain it.
 
 -   **What the AI receives.** For a digital PDF: the report's text, after our own code (not an AI) removes the names of the patient and their caregivers, phone numbers, email addresses, Aadhaar and PAN numbers, and labelled IDs. If a name is still found after that step, the report is not sent at all. For a photo or a scanned PDF: the image itself, which can show personal details printed on it. With either, the patient's age and sex, so that ranges can be read correctly. Never the patient's name, your email, or your account details.
--   **Where it runs.** On the servers of the AI provider that OpenRouter routes to, which may be outside India.
+-   **Where it runs.** Anthropic's Claude models, reached through OpenRouter, on the servers of the provider OpenRouter routes to (Anthropic, or a cloud provider that hosts Claude), which may be outside India. Our production setting allows only providers that promise not to keep or train on the data.
 -   **What it returns.** A short summary, the test results as printed, flags that need attention, and questions to ask the doctor. We check every value against the report text before we store it.
 -   **What it does not do.** It does not diagnose, and it does not advise starting or stopping any medicine. Check anything worrying with a doctor.
--   **Choice.** AI reading is on for a new account (the sign-in screen says so), and you can turn it off at any time in Profile. If you made a choice before 5 October 2026, it stays as you set it. While it is off, reports you add are stored and shown but not read, and nothing goes to the AI. Turning it off stops new readings; readings already made stay with their reports until you delete them.
+-   **Choice.** Signing in agrees to this notice only; it does not turn AI on. The first time you add a report (or connect WhatsApp), Kindred shows what the AI receives and asks: **Yes** or **Not now**. Both answers are saved and you are not asked again; you can change your choice at any time in Profile. If you made a choice before 7 October 2026, it stays as you set it. While AI reading is off (or not chosen yet), reports you add are stored and shown but not read, and nothing goes to the AI. Turning it off stops new readings; readings already made stay with their reports until you delete them.
 
 ### Asking Kindred and visit briefs {#ask}
 
@@ -344,5 +344,6 @@ To keep the notice honest and avoid commitments Kindred can’t yet keep:
 -   v0.12 → v0.13 _(2026-10-05, applied)_: signing in with Google is the agreement, stated under the button (§4, launch gate 6); AI reading is on for new accounts and can be turned off in Profile, earlier choices stay (§12); updates are agreed with one tap.
 -   v0.13 → v0.14 _(2026-10-05, applied)_: the Ask Kindred chat is kept 30 days so follow-up questions have context; Clear chat, account deletion and deleting a person or report delete it (In short, §2, §6, #ask).
 -   v0.14, edit _(2026-10-05)_: phone notifications also remind every caregiver when a home check is due; readings within limits come without sound; the 7-day reminder note (In short, §2, §3). No new data, purpose of a new kind or processor, so nobody is asked to agree again.
--   v0.14 → v1.0: when this notice ships in-app and on the public web to external users for the first time, on the day of the first AAB upload to Internal Testing.
+-   v0.14 → v0.15 _(2026-10-07)_: AI reading is a separate choice, asked before the first report, no longer on for new accounts at sign-in; the AI provider is named (Anthropic's Claude via OpenRouter); patients' sex is stored, filled from the relation (In short, §2, §7, §12). Everyone is asked to agree again; earlier AI choices stay.
+-   v0.15 → v1.0: when Kindred is published on Google Play by its organisation; the operator named in §1 changes to that organisation.
 -   v1.0 → v1.1, v1.2 …: any further changes; communicated via email + in-app prompt.
