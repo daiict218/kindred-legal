@@ -133,11 +133,11 @@
 <body>
   <div class="content">
 <h1 id="kindred-privacy-notice" tabindex="-1">Kindred — Privacy Notice</h1>
-<p><strong>Status:</strong> v0.15 · <em>Testing stage: Kindred is used by the founder’s family and invited testers only.</em> <strong>Last updated:</strong> 2026-10-07</p>
+<p><strong>Status:</strong> v0.16 · <em>Testing stage: Kindred is used by the founder’s family and invited testers only.</em> <strong>Last updated:</strong> 2026-10-08</p>
 <hr>
 <h2 id="in-short-the-30-second-version" tabindex="-1">In short — the 30-second version</h2>
 <ul>
-<li><strong>Kindred is a personal health-records vault for caregivers.</strong> You upload records (lab reports, prescriptions, doctor notes, etc.) for the people you care for, and log day-to-day vital readings (BP, blood sugar) for them.</li>
+<li><strong>Kindred is a personal health-records vault for caregivers.</strong> You upload records (lab reports, prescriptions, doctor notes, etc.) for the people you care for, and log day-to-day vital readings (BP, blood sugar) and symptoms (fever, cough, pain…) for them.</li>
 <li><strong>Your data is stored in India</strong> (Mumbai), on Oracle Cloud.</li>
 <li><strong>AI explains your reports, only if you say yes.</strong> Kindred asks you the first time you add a report (or connect WhatsApp); until you say yes, AI reading stays off. You can change your choice at any time in Profile. Before a report goes to the AI, we remove names, phone numbers, email addresses and ID numbers from its text; photos go as they are. The AI runs on Anthropic’s Claude models through OpenRouter, whose servers may be outside India. See <a href="#ai">AI reading of reports</a>.</li>
 <li><strong>You can ask Kindred questions about your family’s records</strong>, and make a one-page brief for a doctor visit. The AI sees relations (“your mother”), never names. We keep the chat for 30 days so Kindred remembers what you asked before; <strong>Clear chat</strong> deletes it at once. See <a href="#ask">Asking Kindred and visit briefs</a>.</li>
@@ -175,6 +175,11 @@
 <li>Optional notes you add to a reading.</li>
 <li>A threshold you set for each patient (e.g., 140/90 for BP) and a flag we compute for each reading indicating whether it crossed the threshold.</li>
 <li>Who logged the reading and when. Vital readings are intrinsic to the patient; we record which caregiver entered them as metadata, for accountability among co-caregivers.</li>
+</ul>
+<p><strong>Symptoms you log</strong></p>
+<ul>
+<li>Symptoms you note for a person (for example fever, headache, stomach pain), picked from a list or in your own words, with an optional temperature and the time they were felt. You can log them on the person’s page or by telling Ask Kindred.</li>
+<li>Who logged them and when. Only the caregiver who logged an entry can delete it.</li>
 </ul>
 <p><strong>Caregiver-relationship data</strong></p>
 <ul>
@@ -237,6 +242,10 @@
 <tr>
 <td>Vital readings</td>
 <td>To track day-to-day measurements, show trends to caregivers, and alert co-caregivers when a reading crosses a threshold the family has set.</td>
+</tr>
+<tr>
+<td>Symptoms</td>
+<td>To keep a diary of how a person felt for the next doctor visit (it is shown in the visit brief) and to answer questions about it in Ask Kindred. When chest pain or breathlessness is logged, the app shows a fixed message to call 112 or go to a hospital: a set rule, not a diagnosis.</td>
 </tr>
 <tr>
 <td>Caregiver-relationship data</td>
@@ -305,6 +314,10 @@
 <tr>
 <td>Vital readings you logged</td>
 <td>Until the person they belong to is deleted, or you delete your account (if no one else looks after that person). Erased 24 hours after the request, like records.</td>
+</tr>
+<tr>
+<td>Symptoms you logged</td>
+<td>Until you delete the entry (erased at once), the person they belong to is deleted, or you delete your account (if no one else looks after that person). Erased like vital readings.</td>
 </tr>
 <tr>
 <td>Caregiver invites and acceptance records</td>
@@ -379,7 +392,7 @@
 </ul>
 <p>We also share data with <strong>other caregivers you choose to invite</strong>:</p>
 <ul>
-<li>When you invite another person (typically a family member) to view a patient’s records, that person becomes a co-caregiver of that patient and can view all of the records you’ve uploaded for that patient. They can also upload new records and log vital readings for the same patient. You retain access; the invite adds them, it does not transfer ownership.</li>
+<li>When you invite another person (typically a family member) to view a patient’s records, that person becomes a co-caregiver of that patient and can view all of the records you’ve uploaded for that patient. They can also upload new records and log vital readings and symptoms for the same patient. You retain access; the invite adds them, it does not transfer ownership.</li>
 <li>A share is identified by the recipient’s email address. The recipient must sign in to Kindred with that exact email (via Google Sign-In) before access takes effect. If the share is not claimed within 30 days, it expires automatically.</li>
 <li><strong>You can remove an invited caregiver at any time</strong>, including a caregiver who originally invited others. If you are the patient yourself (i.e., you have signed up and claimed your own record), you can revoke any caregiver — including the person who originally added you — without their cooperation. This is a deliberate property: control over who can see your records belongs to you.</li>
 <li>Removing a caregiver ends their access to that patient’s records and vitals going forward. Records and readings they entered while they had access remain in the patient’s record set.</li>
@@ -437,9 +450,10 @@
 </ul>
 <h3 id="ask" tabindex="-1">Asking Kindred and visit briefs</h3>
 <ul>
-<li><strong>Asking.</strong> In the <strong>Ask Kindred</strong> chat (the green chat button in the app, the Ask page on the web) you can ask about any report, test or home log of the people you care for. An AI model answers by looking up your family’s records through Kindred, one piece at a time: the list of people (by relation, age and sex), test results and trends, report summaries and findings, prescriptions and home readings. It can see only the people you are a caregiver of.</li>
+<li><strong>Asking.</strong> In the <strong>Ask Kindred</strong> chat (the green chat button in the app, the Ask page on the web) you can ask about any report, test or home log of the people you care for. An AI model answers by looking up your family’s records through Kindred, one piece at a time: the list of people (by relation, age and sex), test results and trends, report summaries and findings, prescriptions, home readings and symptoms. It can see only the people you are a caregiver of.</li>
 <li><strong>Speaking instead of typing.</strong> The mic button in the app’s chat opens your phone’s own voice typing (Google’s, on most phones). Google turns your voice into text under its own terms. Kindred never records or receives the audio, only the text, which you see in the box before you send it.</li>
 <li><strong>Saving a reading by chat.</strong> If you ask (“log my sugar, 89 fasting”), Kindred saves that BP or sugar reading for the person you name, the same as the <strong>Log BP or sugar</strong> button, and tells your family the same way. It saves only numbers you typed in the chat, never values taken from a report. You can change it in the Logs tab for 30 minutes.</li>
+<li><strong>Noting symptoms by chat.</strong> If you tell Ask Kindred how someone feels (“I have fever and headache”), it saves those symptoms in that person’s symptom diary, the same as the <strong>Log symptoms</strong> button. It never saves symptoms from a report: if it read a report in the same answer, it asks you to confirm first. Your own words in the diary go through the same name removal as your questions before the AI reads them.</li>
 <li><strong>What the AI receives.</strong> Your question, with every name we hold for your family replaced by a relation label (for example “[Mother]”) and phone numbers, email addresses and IDs removed. If a name is still found after that step, the question is not sent. The records it looks up carry no names, file names, doctor names or your notes.</li>
 <li><strong>What we keep.</strong> The chat, for 30 days, on our server (encrypted, like your records), so that Kindred remembers the conversation: a follow-up is sent to the AI together with your earlier questions and its earlier answers, still without names. Nothing is saved on your phone or in your browser. <strong>Clear chat</strong> (⋮ in the app, the button on the web) deletes it at once. An answer you report with <strong>Report this answer</strong> is kept for 90 days to check it. See <a href="#retention">How long we keep your data</a>.</li>
 <li><strong>Visit brief.</strong> The brief’s numbers come straight from your records and home logs, not from the AI. Only its short summary and the suggested questions for the doctor are written by the AI, in the same way as an answer on the Ask page.</li>
@@ -538,7 +552,8 @@
 <li>v0.14 → v0.15 <em>(2026-10-07)</em>: AI reading is a separate choice, asked before the first report, no longer on for new accounts at sign-in; the AI provider is named (Anthropic’s Claude via OpenRouter); patients’ sex is stored, filled from the relation (In short, §2, §7, §12). Everyone is asked to agree again; earlier AI choices stay.</li>
 <li>v0.15, edit <em>(2026-10-08)</em>: the mic in Ask Kindred uses your phone’s voice typing; Kindred gets only the text (#ask). No new data for Kindred, so nobody is asked to agree again.</li>
 <li>v0.15, edit <em>(2026-10-08)</em>: Ask Kindred can save a BP or sugar reading you type (#ask). Same data, purpose and processors as the Log button and the chat, so nobody is asked to agree again.</li>
-<li>v0.15 → v1.0: when Kindred is published on Google Play by its organisation; the operator named in §1 changes to that organisation.</li>
+<li>v0.15 → v0.16 <em>(2026-10-08)</em>: symptom diary (In short, §2, §3, §6, §7, #ask): what is kept, why, for how long, and that Ask Kindred can save and read it. Everyone is asked to agree again with one tap; earlier AI choices stay.</li>
+<li>v0.16 → v1.0: when Kindred is published on Google Play by its organisation; the operator named in §1 changes to that organisation.</li>
 <li>v1.0 → v1.1, v1.2 …: any further changes; communicated via email + in-app prompt.</li>
 </ul>
 
