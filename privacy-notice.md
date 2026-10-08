@@ -11,7 +11,7 @@
 -   **AI explains your reports, only if you say yes.** Kindred asks you the first time you add a report (or connect WhatsApp); until you say yes, AI reading stays off. You can change your choice at any time in Profile. Before a report goes to the AI, we remove names, phone numbers, email addresses and ID numbers from its text; photos go as they are. The AI runs on Anthropic's Claude models through OpenRouter, whose servers may be outside India. See [AI reading of reports](#ai).
 -   **You can ask Kindred questions about your family's records**, and make a one-page brief for a doctor visit. The AI sees relations ("your mother"), never names. We keep the chat for 30 days so Kindred remembers what you asked before; **Clear chat** deletes it at once. See [Asking Kindred and visit briefs](#ask).
 -   **You can send reports on WhatsApp.** Our WhatsApp replies never contain your test values; those stay behind your Kindred sign-in. See [Using Kindred on WhatsApp](#whatsapp).
--   **Phone notifications.** When someone else in your family adds a report or a reading, and when a home check (BP, sugar, medicine) set up for a person you look after is due, the Kindred app can tell you. Google delivers only a signal with numbers that identify the item, never names or health values. Your phone then gets the text from Kindred over your signed-in connection. See [Who we share it with](#sharing).
+-   **Phone notifications.** When someone else in your family adds a report, a reading or symptoms, and when a home check (BP, sugar, medicine) set up for a person you look after is due, the Kindred app can tell you. Google delivers only a signal with numbers that identify the item, never names or health values. Your phone then gets the text from Kindred over your signed-in connection. See [Who we share it with](#sharing).
 -   **We don’t sell your data, ever.** We don’t share it with advertisers, marketers, or insurers.
 -   **You can delete your account and your records at any time.** Deleting hides the item at once. For 24 hours you (or anyone who looks after that person) can undo it, in case of a mistake. Then the files and data are erased for good — not just hidden.
 -   **One person to write to:** `ajaygaur319@gmail.com`. We respond to grievance and rights requests within 30 days.
@@ -84,7 +84,7 @@ We only collect data we actually need to run the app. Today, that means:
 **Phone notifications** (Kindred Android app)
 
 -   A push token for each phone where you are signed in to the Kindred app: a random code from Google's Firebase Cloud Messaging that lets us send a notification to that phone. We keep which account it belongs to, the platform (Android) and when it was last used.
--   We do **not** store the notifications. Each one is made when your phone asks for it, in your language, after we check that you still look after that person. It shows the person's first name and what was added, for example "Papa · BP 150/92 · added by Riya", or a report's title and the names of results that need attention. A reminder shows the person's first name and the check, for example "Papa · time for Morning BP"; every caregiver of that person gets it. A reading within its limits comes without sound.
+-   We do **not** store the notifications. Each one is made when your phone asks for it, in your language, after we check that you still look after that person. It shows the person's first name and what was added, for example "Papa · BP 150/92 · added by Riya", or a report's title and the names of results that need attention, or the symptoms, for example "Papa · fever 101°F, headache". A reminder shows the person's first name and the check, for example "Papa · time for Morning BP"; every caregiver of that person gets it. A reading within its limits, and symptoms other than chest pain or breathlessness, come without sound. A BP below 90/60 is marked as very low.
 -   To send each reminder once, we note which check was reminded on which day (ids and the date only) and delete that note after 7 days.
 -   On a locked phone the notification hides its text, unless your phone is set to show all notification content on the lock screen. You can turn Kindred's notifications off in your phone's settings at any time.
 
@@ -112,7 +112,7 @@ We only collect data we actually need to run the app. Today, that means:
 | AI readings | To explain a report in plain words, flag results that need attention, and show trends across reports. |
 | Questions you ask, visit briefs | To answer questions about your family's records and prepare a one-page brief for a doctor visit. |
 | Reports of AI answers | To check AI answers that people flag as wrong, harmful or offensive, and to make Kindred's AI answers better. |
-| Phone notification tokens | To tell you on your phone when someone else adds a report or a reading for a person you look after, and when a home check for them is due. |
+| Phone notification tokens | To tell you on your phone when someone else adds a report, a reading or symptoms for a person you look after, and when a home check for them is due. |
 | Operational logs | To keep the service secure, diagnose problems, and detect abuse. |
 | App error reports | To find and fix what goes wrong in the Kindred app, for example why a sign-in failed on a certain phone. |
 
@@ -358,5 +358,6 @@ To keep the notice honest and avoid commitments Kindred can’t yet keep:
 -   v0.15, edit _(2026-10-08)_: the mic in Ask Kindred uses your phone's voice typing; Kindred gets only the text (#ask). No new data for Kindred, so nobody is asked to agree again.
 -   v0.15, edit _(2026-10-08)_: Ask Kindred can save a BP or sugar reading you type (#ask). Same data, purpose and processors as the Log button and the chat, so nobody is asked to agree again.
 -   v0.15 → v0.16 _(2026-10-08)_: symptom diary (In short, §2, §3, §6, §7, #ask): what is kept, why, for how long, and that Ask Kindred can save and read it. Everyone is asked to agree again with one tap; earlier AI choices stay.
+-   v0.16, edit _(2026-10-08)_: phone notifications also tell the family when symptoms are logged (with sound for chest pain or breathlessness); a BP below 90/60 is very low (In short, §2, §3). No new data, purpose of a new kind or processor, so nobody is asked to agree again.
 -   v0.16 → v1.0: when Kindred is published on Google Play by its organisation; the operator named in §1 changes to that organisation.
 -   v1.0 → v1.1, v1.2 …: any further changes; communicated via email + in-app prompt.
