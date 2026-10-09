@@ -1,6 +1,6 @@
 # Kindred — Privacy Notice
 
-**Status:** v0.16 · _Testing stage: Kindred is used by the founder's family and invited testers only._ **Last updated:** 2026-10-08
+**Status:** v0.16 · _Testing stage: Kindred is used by the founder's family and invited testers only._ **Last updated:** 2026-10-09
 
 * * *
 
@@ -69,7 +69,7 @@ We only collect data we actually need to run the app. Today, that means:
 
 -   Your WhatsApp phone number, linked to your Kindred account after you confirm it.
 -   The files you send us on WhatsApp. They are stored like any other record.
--   For each message: its type (file, text, button), when it arrived, and what Kindred did with it. We do **not** store the text of your WhatsApp messages.
+-   For each message: its type (file, text, button), when it arrived, and what Kindred did with it. If your first message came from the WhatsApp button on our website, we also note that, and whether it was the button on a lab test guide (never which test). We do **not** store the text of your WhatsApp messages.
 
 **AI readings**
 
@@ -360,5 +360,6 @@ To keep the notice honest and avoid commitments Kindred can’t yet keep:
 -   v0.15 → v0.16 _(2026-10-08)_: symptom diary (In short, §2, §3, §6, §7, #ask): what is kept, why, for how long, and that Ask Kindred can save and read it. Everyone is asked to agree again with one tap; earlier AI choices stay.
 -   v0.16, edit _(2026-10-08)_: phone notifications also tell the family when symptoms are logged (with sound for chest pain or breathlessness); a BP below 90/60 is very low (In short, §2, §3). No new data, purpose of a new kind or processor, so nobody is asked to agree again.
 -   v0.16, edit _(2026-10-08)_: the web app's chat has the mic too; it uses the browser's voice typing and Kindred gets only the text (#ask). No new data for Kindred, so nobody is asked to agree again.
+-   v0.16, edit _(2026-10-09)_: the WhatsApp message log notes when a first message came from the website's button, or a lab test guide's, never which test (§2). Kept 30 days like the rest of the log. No new purpose of a new kind or processor, so nobody is asked to agree again.
 -   v0.16 → v1.0: when Kindred is published on Google Play by its organisation; the operator named in §1 changes to that organisation.
 -   v1.0 → v1.1, v1.2 …: any further changes; communicated via email + in-app prompt.
