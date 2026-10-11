@@ -1,6 +1,6 @@
 # Kindred — Privacy Notice
 
-**Status:** v0.16 · _Testing stage: Kindred is used by the founder's family and invited testers only._ **Last updated:** 2026-10-09
+**Status:** v0.16 · _Testing stage: Kindred is used by the founder's family and invited testers only._ **Last updated:** 2026-10-11
 
 * * *
 
@@ -58,6 +58,13 @@ We only collect data we actually need to run the app. Today, that means:
 -   Symptoms you note for a person (for example fever, headache, stomach pain), picked from a list or in your own words, with an optional temperature and the time they were felt. You can log them on the person's page or by telling Ask Kindred.
 -   Who logged them and when. Only the caregiver who logged an entry can delete it.
 
+**Documents a clinic sends you, and check-up reminders**
+
+-   A clinic that uses Kindred can send you a prescription or report: its staff take a photo, enter your mobile number and a follow-up (for example "cleaning in 6 months"), and confirm that you agreed. Kindred keeps the file and your number until you open the link, or for 30 days. Your number is used only to send you that one message; it is not added to any account.
+-   When you open the link and add the document, it becomes a record of the person you choose, marked with the clinic's name, and the follow-up becomes a check-up reminder for that person.
+-   Check-up reminders that you or a clinic set: what, for whom, when, and which clinic. When you tap **Book**, we count the tap for that clinic: a number only, not who tapped.
+-   For clinic staff who sign in to Kindred for clinics: name, email address, Google account identifier, and what they sent (when, the follow-up, and the last 4 digits of the number while the link is open).
+
 **Caregiver-relationship data**
 
 -   The email address of someone you invite to share access to a patient’s records.
@@ -107,6 +114,8 @@ We only collect data we actually need to run the app. Today, that means:
 | Health-record data | To store records on your behalf and show them back to you and the caregivers you authorise. |
 | Vital readings | To track day-to-day measurements, show trends to caregivers, and alert co-caregivers when a reading crosses a threshold the family has set. |
 | Symptoms | To keep a diary of how a person felt for the next doctor visit (it is shown in the visit brief) and to answer questions about it in Ask Kindred. When chest pain or breathlessness is logged, the app shows a fixed message to call 112 or go to a hospital: a set rule, not a diagnosis. |
+| Documents from a clinic | To deliver a document your clinic sent you, and to set the follow-up it asked for. |
+| Check-up reminders | To tell you, and the others who look after that person, when a check-up is due, and to open the clinic's WhatsApp when you tap Book. |
 | Caregiver-relationship data | To deliver invites, grant access to the records and vitals you’ve chosen to share, and keep an honest audit trail of who agreed to what and when. |
 | WhatsApp data | To receive reports you send on WhatsApp, file them under the right family member, and reply to you. |
 | AI readings | To explain a report in plain words, flag results that need attention, and show trends across reports. |
@@ -146,6 +155,8 @@ You can withdraw consent at any time — see [Your rights](#your-rights). Withdr
 | WhatsApp link (your number ↔ your account) | Until you send **STOP**, or until 90 days pass with no message from you, or you delete your account. |
 | WhatsApp message log (type, time, outcome; no text) | 30 days, then deleted. |
 | A WhatsApp file waiting for you to say whose report it is | 24 hours, then deleted if you don't choose. |
+| A document a clinic sent you, and your number with it | Until you open the link, or 30 days; then the file and your number are deleted if the link was not used. Once you add the document, it is a record like any other. |
+| Check-up reminders | Until you mark one Done (a repeating one moves to its next date), delete it, or the person is deleted. |
 | One-time join links | Until used, or 7 days, whichever comes first. The record of who created and used it stays with the caregiver audit trail. |
 | Your chat with Kindred (questions, answers, the AI's working copy) | 30 days from each message, then deleted. Deleted at once when you tap **Clear chat** or delete your account, and when a person or report it used is deleted. Hidden while you can no longer see a person it used, or they turned AI reading off. |
 | AI answers you report (your reason, your note, and the answer's text) | 90 days, then deleted. Also deleted with the report it is about, or with your account. |
@@ -165,6 +176,7 @@ We share your data with a small number of service providers (called **Data Proce
 -   **Google LLC** — for Google Sign-In, when you choose to sign in with Google. Google’s own privacy notice applies to that step.
 -   **Google LLC (Google Play)** — when someone opens a join link on an Android phone without the Kindred app, the link can send them to Google Play to install it. The link's one-time code goes to Google Play with it, and Google Play gives the code only to the Kindred app after installation, so the app opens the invite. Google sees the code, not who it is for. The code still works only once, for 7 days.
 -   **Google LLC (Firebase Cloud Messaging)** — to deliver notifications to the Kindred app on your phone. Google receives your phone's push token and a message that holds only the kind of item and numbers that identify it (for example "reading 123, person 45"). Never names, values or report content: your phone gets those from Kindred directly.
+-   **Clinics that use Kindred** are not given your data. A clinic sees only what it sent and totals: how many of its documents were opened, how many of its reminders are waiting, how many times Book was tapped. It never sees your account, your records, or whose records you added its document to.
 -   **Oracle Cloud Infrastructure (India)** — for hosting the backend service and the database, in their Mumbai region.
 -   **Amazon Web Services India** — for hosting uploaded record files in their Mumbai region, once files move to S3 (see [Where your data is stored](#storage-location)).
 -   **OpenRouter, Inc. and the provider it routes to for Anthropic's Claude models (Anthropic, PBC, or a cloud provider that hosts Claude)** — only if you said yes to AI reading, to read reports (see [AI reading of reports](#ai)). They receive report text with names, phone numbers, email addresses and ID numbers removed, plus the patient's age and sex. For photos and scanned PDFs, they receive the image itself, which can show personal details printed on it. Our production setting sends reports only to providers that promise not to keep or train on them. The same providers answer questions you ask Kindred and write visit-brief summaries (see [Asking Kindred and visit briefs](#ask)).
@@ -258,6 +270,8 @@ When a report is uploaded (in the app, on the web or on WhatsApp) and you have s
 -   **Stopping.** Send **STOP** at any time to unlink your number. Records you already sent stay in your account until you delete them.
 -   **Changed number.** If WhatsApp tells us your number changed, or your number sends us nothing for 90 days, we unlink it. You join again from your new number.
 -   **Language.** Kindred's messages use the language you choose. Test names and values stay in English.
+-   **Messages for a clinic.** If a clinic that uses Kindred sends you a prescription or report, Kindred sends you one WhatsApp message with a link to open it, only after the clinic confirms you agreed. The message holds the clinic's name and the link, never health details.
+
 -   **Cost.** Kindred does not send you promotional messages on WhatsApp.
 
 ## 14. Future changes {#changes}
@@ -361,5 +375,6 @@ To keep the notice honest and avoid commitments Kindred can’t yet keep:
 -   v0.16, edit _(2026-10-08)_: phone notifications also tell the family when symptoms are logged (with sound for chest pain or breathlessness); a BP below 90/60 is very low (In short, §2, §3). No new data, purpose of a new kind or processor, so nobody is asked to agree again.
 -   v0.16, edit _(2026-10-08)_: the web app's chat has the mic too; it uses the browser's voice typing and Kindred gets only the text (#ask). No new data for Kindred, so nobody is asked to agree again.
 -   v0.16, edit _(2026-10-09)_: the WhatsApp message log notes when a first message came from the website's button, or a lab test guide's, never which test (§2). Kept 30 days like the rest of the log. No new purpose of a new kind or processor, so nobody is asked to agree again.
+-   v0.16, edit _(2026-10-11)_: Kindred for clinics (§2, §3, §6, §7, §13): documents a clinic sends a patient (file and number kept until the link is used or 30 days), one WhatsApp message to the patient when the clinic confirms they agreed, check-up reminders, Book taps counted per clinic. Nothing changes for someone who never opens a clinic link, and a document joins a record only when the person opens the link and chooses to add it, so nobody is asked to agree again.
 -   v0.16 → v1.0: when Kindred is published on Google Play by its organisation; the operator named in §1 changes to that organisation.
 -   v1.0 → v1.1, v1.2 …: any further changes; communicated via email + in-app prompt.
