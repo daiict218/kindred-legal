@@ -185,8 +185,8 @@
 <ul>
 <li>A clinic that uses Kindred can send you a prescription or report: its staff take a photo, enter your mobile number and a follow-up (for example “cleaning in 6 months”), and confirm that you agreed. Kindred keeps the file and your number until you open the link, or for 30 days. Your number is used only to send you that one message; it is not added to any account.</li>
 <li>When you open the link and add the document, it becomes a record of the person you choose, marked with the clinic’s name, and the follow-up becomes a check-up reminder for that person.</li>
-<li>Check-up reminders that you or a clinic set: what, for whom, when, and which clinic. When you tap <strong>Book</strong>, we count the tap for that clinic: a number only, not who tapped.</li>
-<li>For clinic staff who sign in to Kindred for clinics: name, email address, Google account identifier, and what they sent (when, the follow-up, and the last 4 digits of the number while the link is open).</li>
+<li>Check-up reminders that you or a clinic set: what, for whom, when, which clinic, and when Kindred first reminded you.</li>
+<li>For clinic staff who sign in to Kindred for clinics (the Kindred Clinic app or its web page): name, email address, Google account identifier, and what they sent (when, the follow-up, and the last 4 digits of the number while the link is open). The clinic’s usual visit fee, if it enters one, is the clinic’s business data, used only for its own totals.</li>
 </ul>
 <p><strong>Caregiver-relationship data</strong></p>
 <ul>
@@ -260,7 +260,7 @@
 </tr>
 <tr>
 <td>Check-up reminders</td>
-<td>To tell you, and the others who look after that person, when a check-up is due, and to open the clinic’s WhatsApp when you tap Book.</td>
+<td>To tell you, and the others who look after that person, when a check-up is due.</td>
 </tr>
 <tr>
 <td>Caregiver-relationship data</td>
@@ -407,7 +407,7 @@
 <li><strong>Google LLC</strong> — for Google Sign-In, when you choose to sign in with Google. Google’s own privacy notice applies to that step.</li>
 <li><strong>Google LLC (Google Play)</strong> — when someone opens a join link on an Android phone without the Kindred app, the link can send them to Google Play to install it. The link’s one-time code goes to Google Play with it, and Google Play gives the code only to the Kindred app after installation, so the app opens the invite. Google sees the code, not who it is for. The code still works only once, for 7 days.</li>
 <li><strong>Google LLC (Firebase Cloud Messaging)</strong> — to deliver notifications to the Kindred app on your phone. Google receives your phone’s push token and a message that holds only the kind of item and numbers that identify it (for example “reading 123, person 45”). Never names, values or report content: your phone gets those from Kindred directly.</li>
-<li><strong>Clinics that use Kindred</strong> are not given your data. A clinic sees only what it sent and totals: how many of its documents were opened, how many of its reminders are waiting, how many times Book was tapped. It never sees your account, your records, or whose records you added its document to.</li>
+<li><strong>Clinics that use Kindred</strong> are not given your data. A clinic sees only what it sent and totals: how many of its documents were opened, how many of its reminders are waiting, and how many people it sent a new document to after Kindred reminded them (“came back after a reminder”). It never sees who, your account, your records, or whose records you added its document to. Kindred never sends you to a clinic’s own WhatsApp.</li>
 <li><strong>Oracle Cloud Infrastructure (India)</strong> — for hosting the backend service and the database, in their Mumbai region.</li>
 <li><strong>Amazon Web Services India</strong> — for hosting uploaded record files in their Mumbai region, once files move to S3 (see <a href="#storage-location">Where your data is stored</a>).</li>
 <li><strong>OpenRouter, Inc. and the provider it routes to for Anthropic’s Claude models (Anthropic, PBC, or a cloud provider that hosts Claude)</strong> — only if you said yes to AI reading, to read reports (see <a href="#ai">AI reading of reports</a>). They receive report text with names, phone numbers, email addresses and ID numbers removed, plus the patient’s age and sex. For photos and scanned PDFs, they receive the image itself, which can show personal details printed on it. Our production setting sends reports only to providers that promise not to keep or train on them. The same providers answer questions you ask Kindred and write visit-brief summaries (see <a href="#ask">Asking Kindred and visit briefs</a>).</li>
@@ -598,6 +598,7 @@
 <li>v0.16, edit <em>(2026-10-08)</em>: the web app’s chat has the mic too; it uses the browser’s voice typing and Kindred gets only the text (#ask). No new data for Kindred, so nobody is asked to agree again.</li>
 <li>v0.16, edit <em>(2026-10-09)</em>: the WhatsApp message log notes when a first message came from the website’s button, or a lab test guide’s, never which test (§2). Kept 30 days like the rest of the log. No new purpose of a new kind or processor, so nobody is asked to agree again.</li>
 <li>v0.16, edit <em>(2026-10-11)</em>: Kindred for clinics (§2, §3, §6, §7, §13): documents a clinic sends a patient (file and number kept until the link is used or 30 days), one WhatsApp message to the patient when the clinic confirms they agreed, check-up reminders, Book taps counted per clinic. Nothing changes for someone who never opens a clinic link, and a document joins a record only when the person opens the link and chooses to add it, so nobody is asked to agree again.</li>
+<li>v0.16, edit <em>(2026-10-11, later)</em>: the Kindred Clinic app for clinic staff; <strong>Book</strong> removed (Kindred no longer counts taps or opens a clinic’s WhatsApp); clinics see one more total, “came back after a reminder” (a count, never who). Clinics still get totals only, so nobody is asked to agree again.</li>
 <li>v0.16 → v1.0: when Kindred is published on Google Play by its organisation; the operator named in §1 changes to that organisation.</li>
 <li>v1.0 → v1.1, v1.2 …: any further changes; communicated via email + in-app prompt.</li>
 </ul>
