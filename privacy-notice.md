@@ -1,6 +1,6 @@
 # Kindred — Privacy Notice
 
-**Status:** v0.16 · _Testing stage: Kindred is used by the founder's family and invited testers only._ **Last updated:** 2026-10-11
+**Status:** v1.0 · _Kindred is published on Google Play by Forge Consultancy._ **Last updated:** 2026-10-27
 
 * * *
 
@@ -14,7 +14,7 @@
 -   **Phone notifications.** When someone else in your family adds a report, a reading or symptoms, and when a home check (BP, sugar, medicine) set up for a person you look after is due, the Kindred app can tell you. Google delivers only a signal with numbers that identify the item, never names or health values. Your phone then gets the text from Kindred over your signed-in connection. See [Who we share it with](#sharing).
 -   **We don’t sell your data, ever.** We don’t share it with advertisers, marketers, or insurers.
 -   **You can delete your account and your records at any time.** Deleting hides the item at once. For 24 hours you (or anyone who looks after that person) can undo it, in case of a mistake. Then the files and data are erased for good — not just hidden.
--   **One person to write to:** `ajaygaur319@gmail.com`. We respond to grievance and rights requests within 30 days.
+-   **One place to write to:** `kindred.health.app@gmail.com`. We respond to grievance and rights requests within 30 days.
 
 The full notice is below. Read it once. The short version above is what most caregivers need to know.
 
@@ -22,9 +22,9 @@ The full notice is below. Read it once. The short version above is what most car
 
 ## 1. Who we are {#who-we-are}
 
-Kindred is operated by **Ajay Gaur**, an individual based in India, acting as the **Data Fiduciary** under the Digital Personal Data Protection Act, 2023 (“DPDPA”).
+Kindred is operated by **Forge Consultancy**, a sole proprietorship registered in India (proprietor: Sri Krishan Sharma; 560/2, New Patel Park, Barahi Road, Line Par, Bahadurgarh, Haryana 124507), acting as the **Data Fiduciary** under the Digital Personal Data Protection Act, 2023 (“DPDPA”). Forge Consultancy publishes Kindred on Google Play.
 
-If Kindred incorporates as a legal entity in future, this notice will be updated and you will be asked to consent again.
+If the business that runs Kindred changes, this notice will be updated and you will be asked to consent again.
 
 For everything in this notice, “we” / “Kindred” means the data fiduciary above. “You” means the person whose personal data is being processed — what DPDPA calls the **Data Principal**.
 
@@ -219,7 +219,7 @@ Three ways:
 
 -   **In the app** — for the most common actions (delete a record, delete a person, delete your account, remove a caregiver), use the in-app option. It is faster and produces the same result as a written request. A deletion takes effect at once and becomes permanent after 24 hours; until then it can be undone.
 -   **On the web** — to delete your account without installing the app (for example, from a borrowed phone, or after uninstalling), sign in to the Kindred web app and choose **Profile → Delete my account**. This is the same end result as in the app.
--   **By email** — write to **`ajaygaur319@gmail.com`** with a short description of the request. Please mention the email address of your Kindred account so we can verify your identity.
+-   **By email** — write to **`kindred.health.app@gmail.com`** with a short description of the request. Please mention the email address of your Kindred account so we can verify your identity.
 
 We respond to all requests within 30 days. Most are completed within 7 days.
 
@@ -237,7 +237,7 @@ DPDPA defines a child as anyone under 18 (Section 9).
 
 If you have a complaint about how we are handling your personal data, write to:
 
-> **Email:** `ajaygaur319@gmail.com` **For the attention of:** Grievance Officer, Kindred **Response time:** Acknowledgement within 7 working days; resolution within 30 days.
+> **Email:** `kindred.health.app@gmail.com` **For the attention of:** Grievance Officer, Kindred (Forge Consultancy) **Response time:** Acknowledgement within 7 working days; resolution within 30 days.
 
 If you are not satisfied with our response, you can complain to the **Data Protection Board of India** under DPDPA Section 13. The Board’s contact details and complaint process will be published on the Government of India’s official channels once the Board is fully constituted.
 
@@ -288,7 +288,7 @@ For other changes (e.g., adding a new feature, switching a service provider), we
 
 For anything in this notice — questions, rights requests, grievances, corrections — write to:
 
-**`ajaygaur319@gmail.com`**
+**`kindred.health.app@gmail.com`**
 
 For everything else (product feedback, bug reports, general questions), use the in-app feedback option once it ships, or the same email above.
 
@@ -323,7 +323,7 @@ These anchors are part of the contract. Don’t rename them — Phase 0.5 in-app
 
 The notice makes promises Kindred has to actually keep. Block Internal Testing publication (and all later tracks) until each of these is true:
 
-1.  **`ajaygaur319@gmail.com` is a monitored inbox.** A 7-day acknowledgement and 30-day resolution SLA is stated; the inbox must reach Ajay reliably and have a triage process. (Tracker: Phase 0.5 r94 grievance contact row.) Phase 0.5 contact is Ajay’s personal Gmail; will swap to `privacy@kindred.in` when `kindred.in` is registered (R238).
+1.  **`kindred.health.app@gmail.com` is a monitored inbox.** A 7-day acknowledgement and 30-day resolution SLA is stated; the inbox must reach Ajay reliably and have a triage process. (Tracker: Phase 0.5 r94 grievance contact row.) Phase 0.5 contact is Ajay’s personal Gmail; will swap to `privacy@kindred.in` when `kindred.in` is registered (R238).
 2.  **Account deletion actually erases data, including S3 record bytes and all object versions.** _Done for files on the Kindred server (testing stage), 2026-09-30:_ `DELETE /auth/me` erases files and data 24 hours after the request. Still open: all object versions once files move to a versioned S3 bucket. (Tracker: Phase 0.5 r14 DPDPA hard-delete + r95 R12 S3 cascade rows.)
 3.  **Per-record deletion erases all S3 versions, not just adds a delete-marker.** (Tracker: Phase 1.5 record-deletion + delete-version row.)
 4.  **The in-app privacy notice screen is wired** — first-launch overlay + permanent link from Profile screen. (Tracker: Phase 0.5 r93 in-app privacy screen row.)
@@ -379,5 +379,5 @@ To keep the notice honest and avoid commitments Kindred can’t yet keep:
 -   v0.16, edit _(2026-10-11)_: Kindred for clinics (§2, §3, §6, §7, §13): documents a clinic sends a patient (file and number kept until the link is used or 30 days), one WhatsApp message to the patient when the clinic confirms they agreed, check-up reminders, Book taps counted per clinic. Nothing changes for someone who never opens a clinic link, and a document joins a record only when the person opens the link and chooses to add it, so nobody is asked to agree again.
 -   v0.16, edit _(2026-10-11, later)_: the Kindred Clinic app for clinic staff; **Book** removed (Kindred no longer counts taps or opens a clinic's WhatsApp); clinics see one more total, "came back after a reminder" (a count, never who). Clinics still get totals only, so nobody is asked to agree again.
 -   v0.16, edit _(2026-10-20)_: Ask Kindred can make, change and stop reminders, and remind the family now (#ask). It uses the reminders you could already set on a person's page, for the same family, so nobody is asked to agree again.
--   v0.16 → v1.0: when Kindred is published on Google Play by its organisation; the operator named in §1 changes to that organisation.
+-   v0.16 → v1.0 _(2026-10-27, applied)_: Kindred's operator and Data Fiduciary is now **Forge Consultancy** (§1), the organisation that publishes it on Google Play; the address to write to is `kindred.health.app@gmail.com` (In short, §9, §11, §15). Because the Data Fiduciary changes, everyone is asked to agree again.
 -   v1.0 → v1.1, v1.2 …: any further changes; communicated via email + in-app prompt.
