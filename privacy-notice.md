@@ -1,6 +1,6 @@
 # Kindred — Privacy Notice
 
-**Status:** v1.0 · _Kindred is published on Google Play by Forge Consultancy._ **Last updated:** 2026-10-27
+**Status:** v1.0 · _Kindred is published on Google Play by Forge Consultancy._ **Last updated:** 2026-10-28
 
 * * *
 
@@ -63,7 +63,7 @@ We only collect data we actually need to run the app. Today, that means:
 -   A clinic that uses Kindred can send you a prescription or report: its staff take a photo, enter your mobile number and a follow-up (for example "cleaning in 6 months"), and confirm that you agreed. Kindred keeps the file and your number until you open the link, or for 30 days. Your number is used only to send you that one message; it is not added to any account.
 -   When you open the link and add the document, it becomes a record of the person you choose, marked with the clinic's name, and the follow-up becomes a check-up reminder for that person.
 -   Check-up reminders that you or a clinic set: what, for whom, when, which clinic, and when Kindred first reminded you.
--   For clinic staff who sign in to Kindred for clinics (the Kindred Clinic app or its web page): name, email address, Google account identifier, and what they sent (when, the follow-up, and the last 4 digits of the number while the link is open). The clinic's usual visit fee, if it enters one, is the clinic's business data, used only for its own totals.
+-   For clinic staff who sign in to Kindred for clinics (the Kindred Clinic app or its web page): name, the username Kindred gave them, their password in a scrambled form that cannot be turned back (scrypt), the key of their authenticator app (encrypted), when they signed in and how many wrong tries in a row, and what they sent (when, the follow-up, and the last 4 digits of the number while the link is open). The clinic's usual visit fee, if it enters one, is the clinic's business data, used only for its own totals.
 
 **Caregiver-relationship data**
 
@@ -380,4 +380,5 @@ To keep the notice honest and avoid commitments Kindred can’t yet keep:
 -   v0.16, edit _(2026-10-11, later)_: the Kindred Clinic app for clinic staff; **Book** removed (Kindred no longer counts taps or opens a clinic's WhatsApp); clinics see one more total, "came back after a reminder" (a count, never who). Clinics still get totals only, so nobody is asked to agree again.
 -   v0.16, edit _(2026-10-20)_: Ask Kindred can make, change and stop reminders, and remind the family now (#ask). It uses the reminders you could already set on a person's page, for the same family, so nobody is asked to agree again.
 -   v0.16 → v1.0 _(2026-10-27, applied)_: Kindred's operator and Data Fiduciary is now **Forge Consultancy** (§1), the organisation that publishes it on Google Play; the address to write to is `kindred.health.app@gmail.com` (In short, §9, §11, §15). Because the Data Fiduciary changes, everyone is asked to agree again.
+-   v1.0, edit _(2026-10-28)_: clinic staff sign in with a username, a password and an authenticator-app code, no longer with Google; Kindred keeps their username, a scrambled password, an encrypted authenticator key and sign-in tries, and no longer their email address or Google account identifier (§2). Only clinic staff are affected, so nobody is asked to agree again.
 -   v1.0 → v1.1, v1.2 …: any further changes; communicated via email + in-app prompt.
