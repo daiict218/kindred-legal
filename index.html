@@ -188,6 +188,11 @@
 <li>Check-up reminders that you or a clinic set: what, for whom, when, which clinic, and when Kindred first reminded you.</li>
 <li>For clinic staff who sign in to Kindred for clinics (the Kindred Clinic app or its web page): name, the username Kindred gave them, their password in a scrambled form that cannot be turned back (scrypt), the key of their authenticator app (encrypted), when they signed in and how many wrong tries in a row, and what they sent (when, the follow-up, and the last 4 digits of the number while the link is open). The clinic’s usual visit fee, if it enters one, is the clinic’s business data, used only for its own totals.</li>
 </ul>
+<p><strong>Doctor visits</strong></p>
+<ul>
+<li>When a recent report has results the AI marks as needing a doctor, Kindred opens one “doctor visit” for that person: the plain-word titles of those results, which reports they came from, the date to see a doctor by, how many reminders Kindred has sent (at most 3), and who said “I’ll handle this”.</li>
+<li>How it was closed: by a prescription you said is from that visit, by “Doctor said nothing is needed”, or by a newer report where those tests are normal; when, and by whom.</li>
+</ul>
 <p><strong>Caregiver-relationship data</strong></p>
 <ul>
 <li>The email address of someone you invite to share access to a patient’s records.</li>
@@ -261,6 +266,10 @@
 <tr>
 <td>Check-up reminders</td>
 <td>To tell you, and the others who look after that person, when a check-up is due.</td>
+</tr>
+<tr>
+<td>Doctor visits</td>
+<td>To remind you, and the others who look after that person, to see a doctor about results that need one, until a prescription or your answer closes it. Never more than 3 reminders for one visit, and never on WhatsApp unless you wrote to Kindred first.</td>
 </tr>
 <tr>
 <td>Caregiver-relationship data</td>
@@ -361,6 +370,10 @@
 <tr>
 <td>Check-up reminders</td>
 <td>Until you mark one Done (a repeating one moves to its next date), delete it, or the person is deleted.</td>
+</tr>
+<tr>
+<td>Doctor visits</td>
+<td>Kept as the person’s history after they close, until the person is deleted.</td>
 </tr>
 <tr>
 <td>One-time join links</td>
@@ -603,6 +616,7 @@
 <li>v0.16, edit <em>(2026-10-20)</em>: Ask Kindred can make, change and stop reminders, and remind the family now (#ask). It uses the reminders you could already set on a person’s page, for the same family, so nobody is asked to agree again.</li>
 <li>v0.16 → v1.0 <em>(2026-10-27, applied)</em>: Kindred’s operator and Data Fiduciary is now <strong>Forge Consultancy</strong> (§1), the organisation that publishes it on Google Play; the address to write to is <code>kindred.health.app@gmail.com</code> (In short, §9, §11, §15). Because the Data Fiduciary changes, everyone is asked to agree again.</li>
 <li>v1.0, edit <em>(2026-10-28)</em>: clinic staff sign in with a username, a password and an authenticator-app code, no longer with Google; Kindred keeps their username, a scrambled password, an encrypted authenticator key and sign-in tries, and no longer their email address or Google account identifier (§2). Only clinic staff are affected, so nobody is asked to agree again.</li>
+<li>v1.0, edit <em>(2026-10-29)</em>: doctor visits. A recent report with results that need a doctor opens one visit per person, with at most 3 reminders, closed by a prescription you confirm, by “nothing needed”, or by a normal retest (§2). It uses the same reports and the same AI reading you already agreed to, so nobody is asked to agree again.</li>
 <li>v1.0 → v1.1, v1.2 …: any further changes; communicated via email + in-app prompt.</li>
 </ul>
 
