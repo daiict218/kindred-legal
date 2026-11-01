@@ -133,14 +133,14 @@
 <body>
   <div class="content">
 <h1 id="kindred-privacy-notice" tabindex="-1">Kindred — Privacy Notice</h1>
-<p><strong>Status:</strong> v1.0 · <em>Kindred is published on Google Play by Forge Consultancy.</em> <strong>Last updated:</strong> 2026-10-31</p>
+<p><strong>Status:</strong> v1.1 · <em>Kindred is published on Google Play by Forge Consultancy.</em> <strong>Last updated:</strong> 2026-11-01</p>
 <hr>
 <h2 id="in-short-the-30-second-version" tabindex="-1">In short — the 30-second version</h2>
 <ul>
 <li><strong>Kindred is a personal health-records vault for caregivers.</strong> You upload records (lab reports, prescriptions, doctor notes, etc.) for the people you care for, and log day-to-day vital readings (BP, blood sugar) and symptoms (fever, cough, pain…) for them.</li>
 <li><strong>Your data is stored in India</strong> (Mumbai), on Oracle Cloud.</li>
 <li><strong>AI explains your reports, only if you say yes.</strong> Kindred asks you the first time you add a report (or connect WhatsApp); until you say yes, AI reading stays off. You can change your choice at any time in Profile. Before a report goes to the AI, we remove names, phone numbers, email addresses and ID numbers from its text; photos go as they are. The AI runs on AI models reached through OpenRouter, on servers that may be outside India. See <a href="#ai">AI reading of reports</a>.</li>
-<li><strong>You can ask Kindred questions about your family’s records</strong>, and make a one-page brief for a doctor visit. The AI sees relations (“your mother”), never names. We keep the chat for 30 days so Kindred remembers what you asked before; <strong>Clear chat</strong> deletes it at once. See <a href="#ask">Asking Kindred and visit briefs</a>.</li>
+<li><strong>You can ask Kindred questions about your family’s records</strong>, and make a one-page brief for a doctor visit. The AI sees relations (“your mother”), never names. We keep the chat for 30 days so Kindred remembers what you asked before; <strong>Clear chat</strong> deletes it at once. Each person also has a <strong>notebook</strong> of lasting things you tell Kindred about them (goals, habits, food, likes and dislikes); everyone who looks after them sees it, and any of you can change or delete it in <strong>What Kindred remembers</strong>. See <a href="#ask">Asking Kindred and visit briefs</a>.</li>
 <li><strong>You can send reports on WhatsApp.</strong> Our WhatsApp replies never contain your test values; those stay behind your Kindred sign-in. See <a href="#whatsapp">Using Kindred on WhatsApp</a>.</li>
 <li><strong>Phone notifications.</strong> When someone else in your family adds a report, a reading or symptoms, and when a home check (BP, sugar, medicine) set up for a person you look after is due, the Kindred app can tell you. Google delivers only a signal with numbers that identify the item, never names or health values. Your phone then gets the text from Kindred over your signed-in connection. See <a href="#sharing">Who we share it with</a>.</li>
 <li><strong>We don’t sell your data, ever.</strong> We don’t share it with advertisers, marketers, or insurers.</li>
@@ -214,6 +214,8 @@
 <p><strong>Questions you ask Kindred</strong></p>
 <ul>
 <li>Your chat with Kindred: each question as you typed it, Kindred’s answer and the reports it cited, and the AI’s working copy of that turn (the question with names replaced by relation labels, and what it looked up in your records). We keep it so a follow-up question (“and her sugar?”) has context. Our logs record only that a question was asked, how long the answer took, and which reports it cited, never the question or the answer.</li>
+<li>A short summary of the older part of a long chat, made by the AI, so Kindred keeps the thread of a long conversation without sending all of it again. Private to you, like the chat.</li>
+<li>Each person’s <strong>notebook</strong>: short lines about lasting things you or another caregiver told Kindred about that person in their chat (for example “wants to build muscle”, “walks every morning”, “does not eat sugar”), in sections (Goals, Habits and routine, Food and diet, Likes and dislikes, Care and doctors, Things to watch), each with its date. We also keep a history of changes: who added, changed or removed a line, and when. Kindred writes a line only from your own words in that message, never from a report, and never with names, links, phone or ID numbers.</li>
 <li>If you tap <strong>Report this answer</strong> under an AI answer or a report’s reading, we keep your report: the reason you chose, your note if you wrote one, and — for an Ask answer or a visit-brief summary — the text of that answer. For a report’s reading we keep only which report it was, because the reading is already stored.</li>
 </ul>
 <p><strong>Phone notifications</strong> (Kindred Android app)</p>
@@ -286,6 +288,10 @@
 <tr>
 <td>Questions you ask, visit briefs</td>
 <td>To answer questions about your family’s records and prepare a one-page brief for a doctor visit.</td>
+</tr>
+<tr>
+<td>Notebook</td>
+<td>So that each person’s Kindred agent remembers what matters to them (a goal, a habit, a food rule) in every caregiver’s chat with them, and fits its answers to it.</td>
 </tr>
 <tr>
 <td>Reports of AI answers</td>
@@ -378,6 +384,18 @@
 <tr>
 <td>One-time join links</td>
 <td>Until used, or 7 days, whichever comes first. The record of who created and used it stays with the caregiver audit trail.</td>
+</tr>
+<tr>
+<td>A person’s notebook</td>
+<td>Until a caregiver deletes a line (its words leave the history too) or the whole notebook (<strong>Delete all</strong> in <strong>What Kindred remembers</strong>), or the person is deleted. Erased like symptoms.</td>
+</tr>
+<tr>
+<td>Notebook change history (who, what, when)</td>
+<td>Like the notebook: a deleted line’s words are removed from it, <strong>Delete all</strong> empties it.</td>
+</tr>
+<tr>
+<td>Summary of the older part of a chat</td>
+<td>Like the chat: 30 days from its last update, deleted with <strong>Clear chat</strong>, with your account, and when a person it covers is deleted.</td>
 </tr>
 <tr>
 <td>Your chat with Kindred (questions, answers, the AI’s working copy)</td>
@@ -494,6 +512,8 @@
 <li><strong>Noting symptoms by chat.</strong> If you tell Ask Kindred how someone feels (“I have fever and headache”), it saves those symptoms in that person’s symptom diary, the same as the <strong>Log symptoms</strong> button. It never saves symptoms from a report: if it read a report in the same answer, it asks you to confirm first. Your own words in the diary go through the same name removal as your questions before the AI reads them.</li>
 <li><strong>Reminders by chat.</strong> If you ask (“remind us to check Papa’s BP every day at 8:30”, “HbA1c in 3 months”), Kindred makes, changes, pauses or deletes that reminder, the same as the reminder buttons on the person’s page, and at that time everyone who looks after the person gets the notification. If you ask it to remind the family now, it sends that notification to them. It does not change reminders in an answer where it read a report: it asks you to confirm first.</li>
 <li><strong>What the AI receives.</strong> Your question, with every name we hold for your family replaced by a relation label (for example “[Mother]”) and phone numbers, email addresses and IDs removed. If a name is still found after that step, the question is not sent. The records it looks up carry no names, file names, doctor names or your notes.</li>
+<li><strong>Each person’s notebook.</strong> In a person’s own chat, when you tell Kindred something lasting about them (a goal, a habit, food, a like or dislike, a care detail, something to watch), it notes it in their notebook in one short line and tells you so. A changed goal replaces the old line; “forget that” removes it. Kindred saves only your own words from that message: never anything it read in a report (if it read one in the same answer, it does not save), never names, links, phone or ID numbers, and at most a few lines per message. Everyone who looks after the person sees the notebook in <strong>What Kindred remembers</strong> on the person’s page and can add, change or delete a line, or delete it all; each line shows who added it. Their Kindred chats use it to fit answers to the person. It is kept on our server in its own file, encrypted like your records, and goes to the AI only with the question, like the chat. The notebook has a size limit; when it is full, Kindred merges or removes old lines before adding new ones.</li>
+<li><strong>Long chats.</strong> Kindred sends the AI your last 20 messages in a chat. Older messages are folded into a short summary by the same AI, after an answer is sent, so a long chat keeps its thread. The summary is private to you and kept like the chat.</li>
 <li><strong>What we keep.</strong> The chat, for 30 days, on our server (encrypted, like your records), so that Kindred remembers the conversation: a follow-up is sent to the AI together with your earlier questions and its earlier answers, still without names. Nothing is saved on your phone or in your browser. <strong>Clear chat</strong> (⋮ in the app, the button on the web) deletes it at once. An answer you report with <strong>Report this answer</strong> is kept for 90 days to check it. See <a href="#retention">How long we keep your data</a>.</li>
 <li><strong>Visit brief.</strong> The brief’s numbers come straight from your records and home logs, not from the AI. Only its short summary and the suggested questions for the doctor are written by the AI, in the same way as an answer on the Ask page.</li>
 <li><strong>Where it runs, and choice.</strong> The same as report reading above: an AI provider that may be outside India, and only if you turned AI reading on. With it off, the Ask page and the brief’s summary say so instead of asking the AI; the rest of the brief still shows.</li>
@@ -619,6 +639,7 @@
 <li>v1.0, edit <em>(2026-10-28)</em>: clinic staff sign in with a username, a password and an authenticator-app code, no longer with Google; Kindred keeps their username, a scrambled password, an encrypted authenticator key and sign-in tries, and no longer their email address or Google account identifier (§2). Only clinic staff are affected, so nobody is asked to agree again.</li>
 <li>v1.0, edit <em>(2026-10-29)</em>: doctor visits. A recent report with results that need a doctor opens one visit per person, with at most 3 reminders, closed by a prescription you confirm, by “nothing needed”, or by a normal retest (§2). It uses the same reports and the same AI reading you already agreed to, so nobody is asked to agree again.</li>
 <li>v1.0, edit <em>(2026-10-29)</em>: the AI is described by how it is reached (OpenRouter) and by its protections, no longer by one model maker’s name, because Kindred may use different models over time (In short, §7, AI reading of reports). What is sent, what is removed first, and the no-keeping, no-training setting are unchanged.</li>
+<li>v1.0 → v1.1 <em>(2026-11-01)</em>: each person’s notebook (In short, §2, §3, §6, #ask): what Kindred notes and from what, who sees it and can change or delete it, its change history, how long it is kept; summaries of the older part of long chats. Everyone is asked to agree again with one tap; earlier AI choices stay.</li>
 <li>v1.0, edit <em>(2026-10-31)</em>: the app’s mic listens inside the chat, after asking once for the microphone permission (refused, it opens the phone’s voice typing as before), and answers can be read aloud by the phone’s own voice (#ask). Kindred still gets only the text, never the audio, so nobody is asked to agree again.</li>
 <li>v1.0 → v1.1, v1.2 …: any further changes; communicated via email + in-app prompt.</li>
 </ul>
