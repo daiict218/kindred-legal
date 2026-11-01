@@ -60,7 +60,7 @@ We only collect data we actually need to run the app. Today, that means:
 
 **Documents a clinic sends you, and check-up reminders**
 
--   A clinic that uses Kindred can send you a prescription or report: its staff take a photo, enter your mobile number and a follow-up (for example "cleaning in 6 months"), and confirm that you agreed. Kindred keeps the file and your number until you open the link, or for 30 days. Your number is used only to send you that one message; it is not added to any account.
+-   A clinic that uses Kindred can send you a prescription or report: its staff take a photo, enter your mobile number and a follow-up (for example "cleaning in 6 months"), and confirm that you agreed. Kindred keeps the file and your number until you open the link, or for 30 days; if the clinic set a follow-up, until 7 days after the follow-up date if that is later. Your number is used only to send you that message and, if you never open the link, one reminder when the follow-up is due; it is not added to any account.
 -   When you open the link and add the document, it becomes a record of the person you choose, marked with the clinic's name, and the follow-up becomes a check-up reminder for that person.
 -   Check-up reminders that you or a clinic set: what, for whom, when, which clinic, and when Kindred first reminded you.
 -   For clinic staff who sign in to Kindred for clinics (the Kindred Clinic app or its web page): name, the username Kindred gave them, their password in a scrambled form that cannot be turned back (scrypt), the key of their authenticator app (encrypted), when they signed in and how many wrong tries in a row, and what they sent (when, the follow-up, and the last 4 digits of the number while the link is open). The clinic's usual visit fee, if it enters one, is the clinic's business data, used only for its own totals.
@@ -164,7 +164,7 @@ You can withdraw consent at any time — see [Your rights](#your-rights). Withdr
 | WhatsApp link (your number ↔ your account) | Until you send **STOP**, or until 90 days pass with no message from you, or you delete your account. |
 | WhatsApp message log (type, time, outcome; no text) | 30 days, then deleted. |
 | A WhatsApp file waiting for you to say whose report it is | 24 hours, then deleted if you don't choose. |
-| A document a clinic sent you, and your number with it | Until you open the link, or 30 days; then the file and your number are deleted if the link was not used. Once you add the document, it is a record like any other. |
+| A document a clinic sent you, and your number with it | Until you open the link, or 30 days (or, with a follow-up, 7 days after the follow-up date if that is later); then the file and your number are deleted if the link was not used. Once you add the document, it is a record like any other. |
 | Check-up reminders | Until you mark one Done (a repeating one moves to its next date), delete it, or the person is deleted. |
 | Doctor visits | Kept as the person's history after they close, until the person is deleted. |
 | One-time join links | Until used, or 7 days, whichever comes first. The record of who created and used it stays with the caregiver audit trail. |
@@ -287,7 +287,7 @@ When a report is uploaded (in the app, on the web or on WhatsApp) and you have s
 -   **Stopping.** Send **STOP** at any time to unlink your number. Records you already sent stay in your account until you delete them.
 -   **Changed number.** If WhatsApp tells us your number changed, or your number sends us nothing for 90 days, we unlink it. You join again from your new number.
 -   **Language.** Kindred's messages use the language you choose. Test names and values stay in English.
--   **Messages for a clinic.** If a clinic that uses Kindred sends you a prescription or report, Kindred sends you one WhatsApp message with a link to open it, only after the clinic confirms you agreed. The message holds the clinic's name and the link, never health details.
+-   **Messages for a clinic.** If a clinic that uses Kindred sends you a prescription or report, Kindred sends you one WhatsApp message with a link to open it, only after the clinic confirms you agreed. If the clinic set a follow-up and you never opened the link, Kindred sends one more WhatsApp message when the follow-up is due, with the clinic's name, the visit date and a new link. If you did open it, the reminder comes in the Kindred app instead, never on WhatsApp. The message holds the clinic's name and the link, never health details.
 
 -   **Cost.** Kindred does not send you promotional messages on WhatsApp.
 
@@ -401,4 +401,5 @@ To keep the notice honest and avoid commitments Kindred can’t yet keep:
 -   v1.0, edit _(2026-10-29)_: the AI is described by how it is reached (OpenRouter) and by its protections, no longer by one model maker's name, because Kindred may use different models over time (In short, §7, AI reading of reports). What is sent, what is removed first, and the no-keeping, no-training setting are unchanged.
 -   v1.0 → v1.1 _(2026-11-01)_: each person's notebook (In short, §2, §3, §6, #ask): what Kindred notes and from what, who sees it and can change or delete it, its change history, how long it is kept; summaries of the older part of long chats. Everyone is asked to agree again with one tap; earlier AI choices stay.
 -   v1.0, edit _(2026-10-31)_: the app's mic listens inside the chat, after asking once for the microphone permission (refused, it opens the phone's voice typing as before), and answers can be read aloud by the phone's own voice (#ask). Kindred still gets only the text, never the audio, so nobody is asked to agree again.
+-   v1.1, edit _(2026-11-01, later)_: documents a clinic sends (§2, §7, §13): with a follow-up, the file and number are kept until 7 days after the follow-up date (not only 30 days), and a patient who never opened the link gets one WhatsApp reminder when it is due. Only people who never opened a clinic link are affected, and they have no account, so nobody is asked to agree again.
 -   v1.0 → v1.1, v1.2 …: any further changes; communicated via email + in-app prompt.
