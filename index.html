@@ -133,13 +133,13 @@
 <body>
   <div class="content">
 <h1 id="kindred-privacy-notice" tabindex="-1">Kindred — Privacy Notice</h1>
-<p><strong>Status:</strong> v1.1 · <em>Kindred is published on Google Play by Forge Consultancy.</em> <strong>Last updated:</strong> 2026-11-01</p>
+<p><strong>Status:</strong> v1.1 · <em>Kindred is published on Google Play by Forge Consultancy.</em> <strong>Last updated:</strong> 2026-11-04</p>
 <hr>
 <h2 id="in-short-the-30-second-version" tabindex="-1">In short — the 30-second version</h2>
 <ul>
 <li><strong>Kindred is a personal health-records vault for caregivers.</strong> You upload records (lab reports, prescriptions, doctor notes, etc.) for the people you care for, and log day-to-day vital readings (BP, blood sugar) and symptoms (fever, cough, pain…) for them.</li>
 <li><strong>Your data is stored in India</strong> (Mumbai), on Oracle Cloud.</li>
-<li><strong>AI explains your reports, only if you say yes.</strong> Kindred asks you the first time you add a report (or connect WhatsApp); until you say yes, AI reading stays off. You can change your choice at any time in Profile. Before a report goes to the AI, we remove names, phone numbers, email addresses and ID numbers from its text; photos go as they are. The AI runs on AI models reached through OpenRouter, on servers that may be outside India. See <a href="#ai">AI reading of reports</a>.</li>
+<li><strong>AI explains your reports.</strong> The line under the <strong>Continue with Google</strong> button says so, and tapping the button is your yes. You can turn AI reading off at any time in Profile. If you made a choice before 4 November 2026, it stays as you set it. Before a report goes to the AI, we remove names, phone numbers, email addresses and ID numbers from its text; photos go as they are. The AI runs on AI models reached through OpenRouter, on servers that may be outside India. See <a href="#ai">AI reading of reports</a>.</li>
 <li><strong>You can ask Kindred questions about your family’s records</strong>, and make a one-page brief for a doctor visit. The AI sees relations (“your mother”), never names. We keep the chat for 30 days so Kindred remembers what you asked before; <strong>Clear chat</strong> deletes it at once. Each person also has a <strong>notebook</strong> of lasting things you tell Kindred about them (goals, habits, food, likes and dislikes); everyone who looks after them sees it, and any of you can change or delete it in <strong>What Kindred remembers</strong>. See <a href="#ask">Asking Kindred and visit briefs</a>.</li>
 <li><strong>You can send reports on WhatsApp.</strong> Our WhatsApp replies never contain your test values; those stay behind your Kindred sign-in. See <a href="#whatsapp">Using Kindred on WhatsApp</a>.</li>
 <li><strong>Phone notifications.</strong> When someone else in your family adds a report, a reading or symptoms, and when a home check (BP, sugar, medicine) set up for a person you look after is due, the Kindred app can tell you. Google delivers only a signal with numbers that identify the item, never names or health values. Your phone then gets the text from Kindred over your signed-in connection. See <a href="#sharing">Who we share it with</a>.</li>
@@ -315,7 +315,7 @@
 </table>
 <p>We do not use any of this data for advertising, marketing profiling, or sale to third parties.</p>
 <h2 id="legal-basis" tabindex="-1">4. Legal basis for processing</h2>
-<p>We process your personal data on the basis of your <strong>consent</strong> (DPDPA Section 6). When you sign in for the first time, the line right under the <strong>Continue with Google</strong> button says that continuing means you agree to this notice and that AI explains your reports, with a link to this notice; tapping the button is your agreement. Nothing is pre-ticked, and Kindred stores or files nothing for you before that. AI reading is on for a new account, and you can turn it off at any time in Profile (see <a href="#ai">AI reading of reports</a>). Whenever what you agree to changes, Kindred shows you once that the notice was updated, and you tap <strong>Agree and continue</strong>; your AI choice stays as it was. Records you add for the people you care for are added by you, as their caregiver, on their behalf. Operational logs and app error reports are processed on the basis of legitimate uses (security and service operation) under DPDPA Section 7.</p>
+<p>We process your personal data on the basis of your <strong>consent</strong> (DPDPA Section 6). When you sign in for the first time, the line right under the <strong>Continue with Google</strong> button says that continuing means you agree to this notice and that an AI service (which may be outside India) reads your reports to explain them, with a link to this notice; tapping the button is your agreement. Nothing is pre-ticked, and Kindred stores or files nothing for you before that. AI reading is on for a new account, and you can turn it off at any time in Profile (see <a href="#ai">AI reading of reports</a>). Whenever what you agree to changes, Kindred shows you once that the notice was updated, and you tap <strong>Agree and continue</strong>; your AI choice stays as it was. Records you add for the people you care for are added by you, as their caregiver, on their behalf. Operational logs and app error reports are processed on the basis of legitimate uses (security and service operation) under DPDPA Section 7.</p>
 <p>You can withdraw consent at any time — see <a href="#your-rights">Your rights</a>. Withdrawal applies going forward and does not affect processing that has already happened.</p>
 <h2 id="storage-location" tabindex="-1">5. Where your data is stored</h2>
 <ul>
@@ -370,6 +370,10 @@
 <tr>
 <td>A WhatsApp file waiting for you to say whose report it is</td>
 <td>24 hours, then deleted if you don’t choose.</td>
+</tr>
+<tr>
+<td>WhatsApp’s reference number for a file sent before your number was linked (no file, no file name)</td>
+<td>24 hours, then deleted. Used up at once when your number is linked.</td>
 </tr>
 <tr>
 <td>A clinic’s patient list: your number, a name and date of birth its staff may add, what it sent you and when</td>
@@ -507,7 +511,7 @@
 <li><strong>Where it runs.</strong> AI models reached through OpenRouter, on the servers of the provider OpenRouter routes each request to, which may be outside India. We may change the model; the protections in this section stay the same. Our production setting allows only providers that promise not to keep or train on the data.</li>
 <li><strong>What it returns.</strong> A short summary, the test results as printed, flags that need attention, and questions to ask the doctor. We check every value against the report text before we store it.</li>
 <li><strong>What it does not do.</strong> It does not diagnose, and it does not advise starting or stopping any medicine. Check anything worrying with a doctor.</li>
-<li><strong>Choice.</strong> Signing in agrees to this notice only; it does not turn AI on. The first time you add a report (or connect WhatsApp), Kindred shows what the AI receives and asks: <strong>Yes</strong> or <strong>Not now</strong>. Both answers are saved and you are not asked again; you can change your choice at any time in Profile. If you made a choice before 7 October 2026, it stays as you set it. While AI reading is off (or not chosen yet), reports you add are stored and shown but not read, and nothing goes to the AI. Turning it off stops new readings; readings already made stay with their reports until you delete them.</li>
+<li><strong>Choice.</strong> For an account made on or after 4 November 2026, the line under the <strong>Continue with Google</strong> button says that an AI service (which may be outside India) reads your reports to explain them; this section gives the details. Tapping the button agrees to that and to this notice, and AI reading is on. You can turn it off at any time in Profile. If you made a choice before, it stays as you set it. Someone who signed in earlier and never chose is asked the first time they add a report: <strong>Yes</strong> or <strong>Not now</strong>. While AI reading is off (or not chosen yet), reports you add are stored and shown but not read, and nothing goes to the AI. Turning it off stops new readings; readings already made stay with their reports until you delete them.</li>
 </ul>
 <h3 id="ask" tabindex="-1">Asking Kindred and visit briefs</h3>
 <ul>
@@ -527,7 +531,10 @@
 <h2 id="whatsapp" tabindex="-1">13. Using Kindred on WhatsApp</h2>
 <ul>
 <li>
-<p><strong>Joining.</strong> You message the Kindred WhatsApp number. We reply with a one-time link. You sign in with Google, then tap <strong>Yes, it’s me</strong> in WhatsApp. Your number is linked only after both steps. Nothing you send before that is stored.</p>
+<p><strong>Joining.</strong> You message the Kindred WhatsApp number. We reply at once with a one-time link, in Hindi and English. You sign in with Google, type your WhatsApp number, then tap <strong>Yes, it’s me</strong> in WhatsApp. Your number is linked only after these steps.</p>
+</li>
+<li>
+<p><strong>A report sent before you join.</strong> If you send a report before your number is linked, we keep only WhatsApp’s reference number for the file and its type (PDF or photo), for 24 hours. We do not download the file, and we do not keep its name. When your number is linked within those 24 hours, Kindred fetches the file from WhatsApp and files it, so you do not have to send it again. After 24 hours the reference number is deleted.</p>
 </li>
 <li>
 <p><strong>What our replies contain.</strong> The report’s title, date and lab, a short summary with all numbers removed, the names of flagged results, and a link. Test values open only after you sign in to Kindred, so they stay out of your chat history.</p>
@@ -536,13 +543,16 @@
 <p><strong>Consent first.</strong> Kindred files a report you send on WhatsApp only after you have agreed to this notice; until then it replies with a link to agree first. With AI reading off, a report you send is filed but not read, and the reply says so.</p>
 </li>
 <li>
+<p><strong>Whose report.</strong> Kindred asks whose report it is. If you tap <strong>Someone else</strong>, it keeps the report, asks the person’s name and how they are related to you, adds them to your family (the same as <strong>Add someone</strong> in the app) and files the report for them. If you do not answer within 24 hours, the report is deleted.</p>
+</li>
+<li>
 <p><strong>Stopping.</strong> Send <strong>STOP</strong> at any time to unlink your number. Records you already sent stay in your account until you delete them.</p>
 </li>
 <li>
 <p><strong>Changed number.</strong> If WhatsApp tells us your number changed, or your number sends us nothing for 90 days, we unlink it. You join again from your new number.</p>
 </li>
 <li>
-<p><strong>Language.</strong> Kindred’s messages use the language you choose. Test names and values stay in English.</p>
+<p><strong>Language.</strong> Kindred’s first reply is in Hindi and English. After you sign in, its messages use your account’s language (your phone’s language, unless you choose another). Test names and values stay in English.</p>
 </li>
 <li>
 <p><strong>Messages for a clinic.</strong> If a clinic that uses Kindred sends you a prescription or report, Kindred sends you one WhatsApp message with a link to open it, only after the clinic confirms you agreed. If the clinic set a follow-up and you never opened the link, Kindred sends one more WhatsApp message when the follow-up is due, with the clinic’s name, the visit date and a new link. If you did open it, the reminder comes in the Kindred app instead, never on WhatsApp. The message holds the clinic’s name and the link, never health details.</p>
@@ -650,6 +660,7 @@
 <li>v1.1, edit <em>(2026-11-01, later)</em>: documents a clinic sends (§2, §7, §13): with a follow-up, the file and number are kept until 7 days after the follow-up date (not only 30 days), and a patient who never opened the link gets one WhatsApp reminder when it is due. Only people who never opened a clinic link are affected, and they have no account, so nobody is asked to agree again.</li>
 <li>v1.1, edit <em>(2026-11-01, later still)</em>: a clinic’s own patient list (§2, §7, §9): the numbers it sent documents to, a name its staff may add, and what it sent and when, kept for the clinic until it removes the patient, the patient asks, or the clinic leaves; a clinic sees whether each of its links was opened; tapping Send is the clinic’s confirmation that the patient agreed. It concerns what clinics keep about people they already treat, not Kindred accounts, so nobody is asked to agree again.</li>
 <li>v1.1, edit <em>(2026-11-01, evening)</em>: clinic chats in the app (§2): a clinic whose document you opened appears as a chat with its documents, follow-ups and ready-made greetings (festival greetings at most weekly, closed-day notices, a birthday wish); a clinic’s patient list may hold a date of birth. App only, no health details, so nobody is asked to agree again.</li>
+<li>v1.1, edit <em>(2026-11-04)</em>: a quicker WhatsApp start (§13, §6): the first reply is the sign-up link in Hindi and English (no language question); a report sent before the number is linked is kept only as WhatsApp’s reference number for 24 hours (no file, no name) and filed once the number is linked; <strong>Someone else</strong> asks the person’s name and relation in WhatsApp and adds them. AI at sign-in (In short, §12): for accounts made from today, the line under <strong>Continue with Google</strong> states AI reading, and the tap turns it on (off any time in Profile). Earlier accounts keep their choice, so nobody is asked to agree again.</li>
 <li>v1.0 → v1.1, v1.2 …: any further changes; communicated via email + in-app prompt.</li>
 </ul>
 
