@@ -1,12 +1,12 @@
 # Kindred — Privacy Notice
 
-**Status:** v1.1 · _Kindred is published on Google Play by Forge Consultancy._ **Last updated:** 2026-11-11
+**Status:** v1.1 · _Kindred is published on Google Play by Forge Consultancy._ **Last updated:** 2026-11-15
 
 * * *
 
 ## In short — the 30-second version
 
--   **Kindred is a personal health-records vault for caregivers.** You upload records (lab reports, prescriptions, doctor notes, etc.) for the people you care for, and log day-to-day vital readings (BP, blood sugar) and symptoms (fever, cough, pain…) for them.
+-   **Kindred is a personal health-records vault for caregivers.** You upload records (lab reports, prescriptions, doctor notes, etc.) for the people you care for, and log day-to-day vital readings (BP, blood sugar), symptoms (fever, cough, pain…) and activities (a run, yoga, a workout) for them.
 -   **Your data is stored in India** (Mumbai), on Oracle Cloud.
 -   **AI explains your reports.** The line under the **Continue with Google** button says so, and tapping the button is your yes. You can turn AI reading off at any time in Profile. If you made a choice before 4 November 2026, it stays as you set it. Before a report goes to the AI, we remove names, phone numbers, email addresses and ID numbers from its text; photos go as they are. The AI runs on AI models reached through OpenRouter, on servers that may be outside India. See [AI reading of reports](#ai).
 -   **You can ask Kindred questions about your family's records**, and make a one-page brief for a doctor visit. The AI sees relations ("your mother"), never names. We keep the chat for 30 days so Kindred remembers what you asked before; **Clear chat** deletes it at once. Each person also has a **notebook** of lasting things you tell Kindred about them (goals, habits, food, likes and dislikes); everyone who looks after them sees it, and any of you can change or delete it in **What Kindred remembers**. See [Asking Kindred and visit briefs](#ask).
@@ -57,6 +57,11 @@ We only collect data we actually need to run the app. Today, that means:
 
 -   Symptoms you note for a person (for example fever, headache, stomach pain), picked from a list or in your own words, with an optional temperature and the time they were felt. You can log them on the person's page or by telling Ask Kindred.
 -   Who logged them and when. Only the caregiver who logged an entry can delete it.
+
+**Activities you log**
+
+-   Activities you tell Ask Kindred a person did (for example a run, a walk, yoga, a gym workout), each as its own entry: what it was, when, and, if you said them, how long, how far and a few words about it (for example "felt easy").
+-   Who logged them and when. Only the caregiver who logged an entry can delete it (ask Kindred to remove it).
 
 **Documents a clinic sends you, and check-up reminders**
 
@@ -124,6 +129,7 @@ We only collect data we actually need to run the app. Today, that means:
 | Health-record data | To store records on your behalf and show them back to you and the caregivers you authorise. |
 | Vital readings | To track day-to-day measurements, show trends to caregivers, and alert co-caregivers when a reading crosses a threshold the family has set. |
 | Symptoms | To keep a diary of how a person felt for the next doctor visit (it is shown in the visit brief) and to answer questions about it in Ask Kindred. When chest pain or breathlessness is logged, the app shows a fixed message to call 112 or go to a hospital: a set rule, not a diagnosis. |
+| Activities | To keep a history of what a person did for their health, so Ask Kindred can answer questions such as "when did I run this month?" or "how much yoga this week?". |
 | Documents from a clinic | To deliver a document your clinic sent you, and to set the follow-up it asked for. |
 | Check-up reminders | To tell you, and the others who look after that person, when a check-up is due. |
 | Doctor visits | To remind you, and the others who look after that person, to see a doctor about results that need one, until a prescription or your answer closes it. Never more than 3 reminders for one visit, and never on WhatsApp unless you wrote to Kindred first. |
